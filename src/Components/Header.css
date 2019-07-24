@@ -1,0 +1,116 @@
+
+.lettersLogoContainer h1{
+    color: black;      
+    font-family: 'Roboto', sans-serif;
+}
+
+#brosRed{
+    color: rgb(214, 0, 0);      
+}
+
+.header{
+    background-color: rgb(230, 230, 230);
+    margin: 0;
+    padding: 0;   
+    display: flex;  
+    align-items: baseline;
+    align-content: center;      
+}
+
+.centerItems{
+    display: flex;
+    margin: auto;
+    width: 50%;  
+    padding: 10px;         
+}
+
+.logo{
+    align-self: center;
+    margin: auto;
+    margin-right: 5px;
+}
+
+.logo img
+{
+    min-width: 40px;  /* Or whatever */    
+    max-width: 75px;      
+}
+
+.lettersLogoContainer{    
+   display: flex;
+}
+
+.lettersLink{
+    text-decoration: none;   
+    padding-left: 0px; 
+}
+
+.navs{
+    margin:auto;
+    margin-left :0px; 
+    padding: 20px;
+    /* padding-bottom: 10px; */
+}
+ 
+.navs a{
+    color: gray;
+    text-decoration: none;    
+    margin-bottom: 0;
+    font-size: 1em;
+    padding: 5px 10px;
+    transition: color 0.5s ease;
+}
+
+.navs a:hover{
+    color: black;
+    border-bottom: 2px solid currentColor;           
+    transition: color 0.5s ease;
+}
+
+.socialNavIcons a{
+    margin: 0 -5px;    
+    width: 50px;
+    padding: 0px;
+}
+
+.socialNavIcons a:last-child{
+    margin-right: 5px;
+    width: 50px;
+    padding: 0px;
+}
+
+.socialNavIcons{
+    margin-left: auto;
+    align-self: center;
+}
+
+.logoInstaHeader{
+    margin-left: auto;
+    width: 50px;
+    color: red;
+}
+
+@media only screen and (max-width: 600px) {
+    .letterLogo {
+      font-size: 35px;         
+    }
+
+    .header{                     
+        height: 60px;
+        width: 100%;             
+        align-items: center;             
+    }
+
+    .navs{
+       padding: 5px; 
+       padding-bottom: 0px;     
+    }
+
+    .logo img
+    {
+        width: 50px;
+        min-width: 50px;
+        max-width: 60px;      
+    }   
+
+  }
