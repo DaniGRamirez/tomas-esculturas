@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from './Components/Header'
+import Catalogo from './Components/Catalogo'
 import Test from './Components/Test'
+import BurguerMenu from './Components/BurguerMenu';
 
 import{
   BrowserRouter as Router,
@@ -10,7 +12,8 @@ import{
 
 
 class App extends Component {
-constructor(props) {
+
+  constructor(props) {
     super(props);
     this.state = {
       isDesktop: false //This is where I am having problems
@@ -32,22 +35,22 @@ constructor(props) {
 
   updatePredicate() {
     // console.log(window.innerWidth);
-    this.setState({ isDesktop: window.innerWidth > 500 });
+    this.setState({ isDesktop: window.innerWidth > 600 });
   }
 
   render() {
     let navBurguerMenu;
-    if(this.state.isDesktop === false) 
-    navBurguerMenu = ""       
-      //navBurguerMenu = <BurguerMenu/>;
+    if(this.state.isDesktop === false)     
+      navBurguerMenu = <BurguerMenu/>;
     else
       navBurguerMenu = ""        
     return (     
       <Router>
       <div>
         <Header isDesktop={this.state.isDesktop}/>    
-        <Test/>  
+        {/* <Test/>   */}
         {navBurguerMenu}
+        <Route exact path='/Catalogo' component={Catalogo}/>    
         {/* <Route exact path='/' component={Home}/> 
         <Route exact path='/Photos' component={Photos}/>        
         <Route exact path='/About' component={About}/>  

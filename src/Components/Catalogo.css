@@ -1,0 +1,19 @@
+
+.catalogoContainer{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap:  wrap;
+    margin-top: 2rem;
+    margin-left: 8%;   
+    margin-right: auto;
+    padding-left: 0; 
+    width: 90%;
+}
+
+@media only screen and (max-width: 600px) {   
+    .catalogoContainer{   
+        justify-content: center;   
+        margin-left: auto;   
+        margin-right: auto;  
+    }
+}

@@ -1,0 +1,67 @@
+
+.esculturaContainer{
+    background-color: #F8F8F8;            
+    flex-basis: 30%;    
+    margin: 5px;
+    min-width: 200px;
+    text-align: center;    
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+.esculturaContainer :hover{
+  flex-basis: 40%;
+  cursor: pointer;
+}
+
+.material{
+    display: inline;
+    margin: 10px;  
+    font-family: 'Quicksand', sans-serif !important;
+    color:#616161;
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+#nombre{
+    color:#939598;
+    font-family: 'Raleway', sans-serif !important;
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+.imgContainer{   
+    min-width: 100%; 
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.imgContainer img{   
+    width: 100%;  
+    -webkit-transition: 0.6s ease;
+    transition: 0.6s ease;
+}
+
+.esculturaContainer img:hover{
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.materialesContainer{
+    margin: 10px;
+ 
+}
+
+@media only screen and (max-width: 800px) {   
+    .esculturaContainer{        
+        flex-basis: 45%;         
+    }
+}
+
+@media only screen and (max-width: 600px) {   
+    .esculturaContainer{        
+        flex-basis: 80%;         
+    }
+}

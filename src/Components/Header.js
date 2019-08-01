@@ -6,6 +6,8 @@ import{
     Link
   } from "react-router-dom"
 
+
+
 class Header extends Component {
     showSettings (event) {
         event.preventDefault();       
@@ -14,14 +16,17 @@ class Header extends Component {
   render(){
     let navBar;
     let socialIcons = "";
+    let nameTomas= "";
     if(this.props.isDesktop === false)     
     {
         navBar = ""
-        socialIcons="";
+        socialIcons="";  
+        nameTomas = <h1 id= "nombreNav">Tomas Garcia Redondo</h1>;
     }   
     else
     {
 
+        nameTomas = "";
         navBar =  
       
         <div className="navs">                               
@@ -48,9 +53,10 @@ class Header extends Component {
                         <Link to="/">
                         <img className="" alt="logo" src = {logo}></img>
                         </Link>
-                    </div>                                                                                           
+                    </div>   
                     {navBar}
                     {socialIcons}
+                    {nameTomas}
                 </div>           
             </div>             
         </div>        

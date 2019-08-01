@@ -53,7 +53,11 @@
 }
  
 .navs a{
-    color: gray;
+
+    font-family: 'Quicksand', sans-serif !important;
+    color:#616161;
+    font-weight: 400;
+    letter-spacing: 1px;       
     text-decoration: none;    
     margin-bottom: 0;
     font-size: 1em;
@@ -90,7 +94,7 @@
     color: red;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1000px) {
     .letterLogo {
       font-size: 35px;         
     }
@@ -113,4 +117,47 @@
         max-width: 60px;      
     }   
 
+    .centerItems{
+        display: flex;
+        margin: 10px;
+        width: 95%;  
+        margin-right: auto;            
+    }
+
+    .logoInstaHeader{
+        margin-left: auto;
+        width: 50px;
+        color: red;
+    }
+
+  }
+
+  @media only screen and (max-width: 600px) {   
+
+    .logo{
+        margin: 10px;
+    }
+    .centerItems{
+        display: flex;
+        margin: 10px;
+        width: 95%;  
+        margin-right: auto;     
+        align-items: center;               
+    }
+
+    .logoInstaHeader{
+        margin-left: auto;
+        width: 50px;
+        color: red;
+    }
+
+    #nombreNav{
+        font-family: 'Quicksand', sans-serif !important;
+        color:#616161;
+        font-weight: 400;
+        letter-spacing: 2px;       
+        text-decoration: none;           
+        font-size: 1.5em;      
+        transition: color 0.5s ease;        
+    }
   }
