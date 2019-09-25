@@ -17,6 +17,7 @@ class Header extends Component {
     let navBar;
     let socialIcons = "";
     let nameTomas= "";
+    let nameTitulo="";
     if(this.props.isDesktop === false)     
     {
         navBar = ""
@@ -27,6 +28,7 @@ class Header extends Component {
     {
 
         nameTomas = "";
+        nameTitulo = "Tomas Garcia Redondo";
         navBar =  
       
         <div className="navs">                               
@@ -54,7 +56,12 @@ class Header extends Component {
                         <img className="" alt="logo" src = {logo}></img>
                         </Link>
                     </div>   
-                    {navBar}
+                    <div className="letrasHeader" >
+                        <div className="Titulo">
+                            {nameTitulo}
+                        </div>
+                        {navBar}
+                    </div>
                     {socialIcons}
                     {nameTomas}
                 </div>           

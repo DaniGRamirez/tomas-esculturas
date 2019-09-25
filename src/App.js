@@ -4,6 +4,7 @@ import Header from './Components/Header'
 import Catalogo from './Components/Catalogo'
 import Test from './Components/Test'
 import BurguerMenu from './Components/BurguerMenu';
+import EsculturaViewer from './Components/EsculturaViewer';
 
 import{
   BrowserRouter as Router,
@@ -46,16 +47,17 @@ class App extends Component {
       navBurguerMenu = ""        
     return (     
       <Router>
-      <div>
-        <Header isDesktop={this.state.isDesktop}/>    
-        {/* <Test/>   */}
-        {navBurguerMenu}
-        <Route exact path='/Catalogo' component={Catalogo}/>    
-        {/* <Route exact path='/' component={Home}/> 
-        <Route exact path='/Photos' component={Photos}/>        
-        <Route exact path='/About' component={About}/>  
-        <Route exact path='/Contact' component={SimpleContact}/>    */}
-      </div>
+        <div>
+          <Header isDesktop={this.state.isDesktop}/>    
+          {/* <Test/>   */}
+          {navBurguerMenu}
+          <Route exact path='/Catalogo' component={Catalogo}/>    
+          <Route path='/Escultura' component={EsculturaViewer}/>  
+          {/* <Route exact path='/' component={Home}/> 
+          <Route exact path='/Photos' component={Photos}/>        
+          <Route exact path='/About' component={About}/>  
+          <Route exact path='/Contact' component={SimpleContact}/>    */}
+        </div>
       </Router>
     );
   }

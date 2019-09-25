@@ -1,0 +1,61 @@
+.EsculturaInfo
+{
+    display: flex;   
+    justify-content: center;
+    margin-bottom: 50px;
+    margin-top: 20px;
+}
+
+.EsculturaDescription{
+    flex-basis: 45%;
+    color:dimgray;      
+}
+
+.EsculturaInfo .esculturaContainer {         
+    flex-basis: 50%;            
+    cursor: not-allowed;
+    pointer-events: none !important;
+}
+
+
+.TextoDescripcion{
+    margin: 20px 25px 10px 25px;
+    text-align: center;
+}
+
+#Descripcion{
+    margin-top:  20%;
+    color:grey;
+}
+
+#Medidas{
+    color:dimgray;    
+}
+
+.disabled {
+    pointer-events: none;   
+  }
+
+@media only screen and (max-width: 800px) {   
+}
+   
+
+@media only screen and (max-width: 600px) {   
+    .EsculturaInfo
+    {               
+        flex-direction: column;
+        margin-bottom: 50px;
+    }
+
+    .EsculturaDescription{        
+        color: aliceblue;       
+        margin : 15px 10% 15px 10%;     
+    }
+   
+    #Descripcion{
+        margin-top:  10%;
+        color:grey;
+    }
+
+}
+

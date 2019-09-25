@@ -4,8 +4,17 @@
     font-family: 'Roboto', sans-serif;
 }
 
-#brosRed{
-    color: rgb(214, 0, 0);      
+.Titulo{
+    margin: 15px auto 15px auto;  
+    font-size: 1.5rem;  
+    border-bottom: solid 1px rgb(60, 60, 60);
+    padding-bottom: 5px;
+}
+
+.letrasHeader{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .header{
@@ -48,7 +57,7 @@
 .navs{
     margin:auto;
     margin-left :0px; 
-    padding: 20px;
+    padding: 10px;
     /* padding-bottom: 10px; */
 }
  
@@ -100,7 +109,7 @@
     }
 
     .header{                     
-        height: 60px;
+        
         width: 100%;             
         align-items: center;             
     }
@@ -135,14 +144,14 @@
   @media only screen and (max-width: 600px) {   
 
     .logo{
-        margin: 10px;
+        margin: 5px;
     }
     .centerItems{
-        display: flex;
-        margin: 10px;
-        width: 95%;  
-        margin-right: auto;     
-        align-items: center;               
+        display: flex;       
+        width: 95%;          
+        align-items: center;     
+        padding: 0;
+        margin: 5px;          
     }
 
     .logoInstaHeader{

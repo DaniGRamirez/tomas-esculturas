@@ -1,5 +1,6 @@
 
 .esculturaContainer{
+    cursor: pointer;
     background-color: #F8F8F8;            
     flex-basis: 30%;    
     margin: 5px;

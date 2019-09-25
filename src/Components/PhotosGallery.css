@@ -1,0 +1,15 @@
+
+.GalleryDiv img:hover{    
+    opacity: 0.5;
+    transition: all 0.25s ease;
+}
+
+.GalleryDiv img{
+    transition: all 0.25s ease;
+}
+
+.GalleryDiv{
+    width: 100vw;
+    margin-left : auto;    
+    margin-right: auto;
+}
