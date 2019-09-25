@@ -1,0 +1,53 @@
+.ContactContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ContactElement{
+    display: flex;
+    flex-direction: row;
+    height: 75px;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-between;
+    width: 40%;
+}
+
+.ContactElement h1{
+    font-size: 100%;
+    align-self: center;
+    margin-right: auto;     
+}
+
+.ContactElement img{
+    
+}
+
+@media only screen and (max-width: 800px) {   
+
+    .ContactContainer {        
+        width: 95%;       
+    }
+
+    .ContactElement{      
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 80%;
+    }
+
+    .ContactElement h1{
+        font-size: 75%;
+        align-self: center;
+        margin-right: auto;       
+    }
+
+    .ContactElement img{
+        margin-left: auto;   
+        size: 50%; 
+    }
+}

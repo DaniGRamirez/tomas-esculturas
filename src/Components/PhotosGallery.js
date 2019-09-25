@@ -64,7 +64,7 @@ class GalleryTest extends Component {
     {     
       return(        
         <div>
-          <Gallery photos={this.props.selectedPhotos}  columns={this.desiredColumns} onClick={this.openLightbox} direction={"column"} />
+          <Gallery photos={this.props.selectedPhotos} columns={this.desiredColumns} onClick={this.openLightbox} direction={"column"} />
             <Lightbox images={this.props.selectedPhotos}
             onClose={this.closeLightbox}
             onClickPrev={this.gotoPrevious}

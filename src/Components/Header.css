@@ -15,10 +15,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-left: auto;
 }
 
 .header{
-    background-color: rgb(230, 230, 230);
+    background-color: rgba(228, 228, 228, 0.61);
     margin: 0;
     padding: 0;   
     display: flex;  
@@ -26,17 +27,15 @@
     align-content: center;      
 }
 
-.centerItems{
+.centerItems {
     display: flex;
     margin: auto;
-    width: 50%;  
-    padding: 10px;         
+    width: 60%;
+    padding: 10px;     
 }
 
-.logo{
-    align-self: center;
-    margin: auto;
-    margin-right: 5px;
+.logo {
+    align-self: center;    
 }
 
 .logo img
@@ -158,6 +157,10 @@
         margin-left: auto;
         width: 50px;
         color: red;
+    }
+
+    .letrasHeader{
+        display: none;       
     }
 
     #nombreNav{

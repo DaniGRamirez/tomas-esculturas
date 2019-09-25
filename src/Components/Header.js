@@ -36,7 +36,7 @@ class Header extends Component {
             <Link to="/Bio" >Bio</Link>  
             <Link to="/Creando" >Creando</Link>                                 
             <Link to="/Exposiciones" >Exposiciones</Link>  
-            <Link to="/Contact" >Contacto</Link>                                 
+            <Link to="/Contacto" >Contacto</Link>                                 
         </div>                      
 
         socialIcons =   

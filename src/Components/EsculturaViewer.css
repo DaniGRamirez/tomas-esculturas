@@ -9,6 +9,7 @@
 .EsculturaDescription{
     flex-basis: 45%;
     color:dimgray;      
+    margin: auto;
 }
 
 .EsculturaInfo .esculturaContainer {         
@@ -19,12 +20,11 @@
 
 
 .TextoDescripcion{
-    margin: 20px 25px 10px 25px;
+    margin: 10px 25px 10px 25px;
     text-align: center;
 }
 
-#Descripcion{
-    margin-top:  20%;
+#Descripcion{    
     color:grey;
 }
 
@@ -36,7 +36,20 @@
     pointer-events: none;   
   }
 
-@media only screen and (max-width: 800px) {   
+@media only screen and (min-width: 1500px) {   
+    .EsculturaInfo
+    {
+       width: 70%;
+       margin-left: auto;
+       margin-right: auto;
+    }
+    
+    .galleryEsculturaContainer{
+        
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
    
 
@@ -46,7 +59,7 @@
         flex-direction: column;
         margin-bottom: 50px;
     }
-
+    
     .EsculturaDescription{        
         color: aliceblue;       
         margin : 15px 10% 15px 10%;     

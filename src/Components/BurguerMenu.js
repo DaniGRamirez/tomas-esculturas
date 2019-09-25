@@ -43,8 +43,10 @@ class BurguerMenu extends Component {
             onStateChange={(state) => this.handleStateChange(state)}>           
               <Link to="/" onClick={() => this.closeMenu()} >Inicio</Link>    
               <Link to="/Catalogo" onClick={() => this.closeMenu()} >Catalogo</Link>                  
-              <Link to="/About" onClick={() => this.closeMenu()}>Biografia</Link>  
-              <Link to="/Contact" onClick={() => this.closeMenu()}>Contacto</Link>              
+              <Link to="/Bio" onClick={() => this.closeMenu()}>Biografia</Link>  
+              <Link to="/Creando" onClick={() => this.closeMenu()}>Creando</Link>  
+              <Link to="/Exposiciones" onClick={() => this.closeMenu()}>Exposiciones</Link>  
+              <Link to="/Contacto" onClick={() => this.closeMenu()}>Contacto</Link>              
               <a target="blank" onClick={() => this.closeMenu()} className="menu-item--small" href="https://www.instagram.com/madbros.spain/">
                 <img id="logoInsta" alt="logo" src = {logoInstagram}></img>
               </a>             

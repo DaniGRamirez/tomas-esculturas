@@ -15,11 +15,6 @@ class EsculturaViewer extends Component {
         selected = this.props.location.id;
     }
 
-    rawMarkup(text){
-      var rawMarkup = text;      
-      return { __html: rawMarkup };
-    }
-
     selectEscultura(fetchEsculturas,nameSelected){
         var i;
         for (i = 0; i < fetchEsculturas.length; i++) {             
@@ -74,6 +69,7 @@ class EsculturaViewer extends Component {
                   <div className = "EsculturaInfo">
                     <Escultura  disabled = {true} esculturaData ={selected} history={this.props.history}></Escultura>
                     <div className ="EsculturaDescription">
+                      <h1> {selected.name}</h1>
                       <p className="TextoDescripcion" id="Descripcion">
                         {selected.descripcion}                        
                       </p>                     
@@ -82,7 +78,9 @@ class EsculturaViewer extends Component {
                       </p>                
                      </div>                                     
                   </div>
-                  <PhotoGallery selectedPhotos={formatedPhotos}></PhotoGallery>
+                  <div className="galleryEsculturaContainer">
+                    <PhotoGallery selectedPhotos={formatedPhotos}></PhotoGallery>
+                  </div>
             </div>)
         }
 

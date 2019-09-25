@@ -1,0 +1,10 @@
+.TallerGallery{
+    margin-top: 25px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.TallerGallery .GalleryDiv{
+    width: 100%;
+}
