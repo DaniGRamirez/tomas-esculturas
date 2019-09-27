@@ -1,16 +1,70 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import './Contacto.css';
+import gql from 'graphql-tag'
+import { graphql } from 'react-apollo'
+import './Exposiciones.css';
 
 class Exposiciones extends Component {              
 
-    render(){
-        return (                   
-            <div className="ExposicionesContainer">                        
-                <h1>Exposiciones</h1>               
-        </div> 
-    )}
+    renderExposiciones(_exposiciones)
+    {
+            return(
+                <div>
+                    <p>{_exposiciones[0].nombre} </p>
+                </div>
+            )
+    }
 
+    render(){
+
+        let { loading, error,exposicionesActivases } = this.props.data;
+        
+        if (error){
+            
+        }
+        
+        if(!loading){
+            console.log(exposicionesActivases[0].exposiciones);
+            return (                   
+                <div className="ExposicionesContainer">                        
+                    <div className="ExposicionesActualesContainer">
+                    {this.renderExposiciones(exposicionesActivases[0].exposiciones)}
+                    </div>              
+                    <div className="ExposicionesActualesContainer">
+
+                    </div>              
+            </div>)
+        }
+
+        return (
+        <div className= "centerDiv">
+            <div className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>)
+    }
 }
 
-export default Exposiciones;
+export const contentExposiciones = gql`
+  query contentQuery {
+    exposicionesActivases{
+            exposiciones{                
+                nombre
+                fechaInicio
+                fechaFinal
+                fotoPrincipal{
+                    url
+                }
+                descripcion
+                fotoEsculturas{
+                    foto{
+                        url
+                    }
+                }
+        }
+    }
+    exposicionesPasadases{
+        id
+    }
+  }
+`
+
+export default graphql(contentExposiciones)(Exposiciones)

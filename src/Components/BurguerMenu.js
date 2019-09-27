@@ -47,7 +47,7 @@ class BurguerMenu extends Component {
               <Link to="/Creando" onClick={() => this.closeMenu()}>Creando</Link>  
               <Link to="/Exposiciones" onClick={() => this.closeMenu()}>Exposiciones</Link>  
               <Link to="/Contacto" onClick={() => this.closeMenu()}>Contacto</Link>              
-              <a target="blank" onClick={() => this.closeMenu()} className="menu-item--small" href="https://www.instagram.com/madbros.spain/">
+              <a target="blank" onClick={() => this.closeMenu()} className="menu-item--small" href="https://www.instagram.com/tomasgr.escultura/">
                 <img id="logoInsta" alt="logo" src = {logoInstagram}></img>
               </a>             
             </Menu>

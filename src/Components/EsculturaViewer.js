@@ -63,18 +63,18 @@ class EsculturaViewer extends Component {
             // console.log(selected);           
             // console.log(formatedPhotos);
             return (                   
-              <div>                                      
+              <div className="EsculturaContainer">                                      
                   {/* <h1>Escultura {selected.nombre}</h1> */}
                   {/* <img src={selected.fotosEscultura[0].foto.url}></img> */}
                   <div className = "EsculturaInfo">
                     <Escultura  disabled = {true} esculturaData ={selected} history={this.props.history}></Escultura>
                     <div className ="EsculturaDescription">
-                      <h1> {selected.name}</h1>
+                      <h1>{selected.nombre}</h1>
                       <p className="TextoDescripcion" id="Descripcion">
                         {selected.descripcion}                        
                       </p>                     
                       <p className="TextoDescripcion" id="Medidas">                        
-                        Medidas: {selected.medidas}
+                          {selected.medidas}
                       </p>                
                      </div>                                     
                   </div>

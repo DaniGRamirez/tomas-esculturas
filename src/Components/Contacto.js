@@ -9,7 +9,7 @@ class Contacto extends Component {
             <div className="ContactContainer">       
                 <div className = "ContactElement">
                     <img src="https://image.flaticon.com/icons/svg/18/18609.svg"></img>
-                    <h1>tomasesculturas@gmail.com</h1>            
+                    <h1>tomasgr.escultura@gmail.com</h1>            
                 </div>                            
                 <div className = "ContactElement">
                     <img src=" https://image.flaticon.com/icons/svg/0/191.svg"></img>   

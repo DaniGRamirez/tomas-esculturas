@@ -98,7 +98,7 @@
 
 .logoInstaHeader{
     margin-left: auto;
-    width: 50px;
+    width: 40px;
     color: red;
 }
 
@@ -134,29 +134,26 @@
 
     .logoInstaHeader{
         margin-left: auto;
-        width: 50px;
-        color: red;
+        width: 50px;       
     }
-
   }
 
   @media only screen and (max-width: 600px) {   
 
     .logo{
-        margin: 5px;
+        display: none;
     }
     .centerItems{
         display: flex;       
         width: 95%;          
         align-items: center;     
         padding: 0;
-        margin: 5px;          
+        margin: 5px auto 5px auto;          
     }
 
     .logoInstaHeader{
         margin-left: auto;
-        width: 50px;
-        color: red;
+        width: 40px;      
     }
 
     .letrasHeader{
@@ -170,6 +167,8 @@
         letter-spacing: 2px;       
         text-decoration: none;           
         font-size: 1.5em;      
-        transition: color 0.5s ease;        
+        transition: color 0.5s ease;  
+        margin-left: auto;
+        margin-right: auto;      
     }
   }

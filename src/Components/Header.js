@@ -2,10 +2,13 @@ import React, {Component} from 'react';
 import './Header.css';
 import logo from '../img/logoredandwhite.png';
 import logoInstagram from '../img/LogoInstaInvertido.png';
+
 import{ 
     Link
   } from "react-router-dom"
 
+  let logo_escultura = "https://media.graphcms.com/RboDW91bQxG4PzNYejdA";
+  let logo_instagram = "https://image.flaticon.com/icons/svg/733/733614.svg";
 
 
 class Header extends Component {
@@ -22,7 +25,9 @@ class Header extends Component {
     {
         navBar = ""
         socialIcons="";  
-        nameTomas = <h1 id= "nombreNav">Tomas Garcia Redondo</h1>;
+        nameTomas =          
+        // <Link to="/"><h1 id= "nombreNav">Tomas Garcia Redondo</h1></Link>                
+        <h1 id= "nombreNav">Tomas Garcia Redondo</h1>
     }   
     else
     {
@@ -41,8 +46,8 @@ class Header extends Component {
 
         socialIcons =   
         <div className="socialNavIcons">
-            <a target="blank" className="menu-item--small" href="https://www.instagram.com/madbros.spain/">            
-                <img className="logoInstaHeader" alt="logo" src = {logoInstagram}></img>                        
+            <a target="blank" className="menu-item--small" href="https://www.instagram.com/tomasgr.escultura/">            
+                <img className="logoInstaHeader" alt="logo" src = {logo_instagram}></img>                        
             </a>               
         </div>
     }
@@ -53,12 +58,15 @@ class Header extends Component {
                 <div className= "centerItems">                
                     <div className= "logo" >
                         <Link to="/">
-                        <img className="" alt="logo" src = {logo}></img>
+                        {/* <img className="" alt="logo" src = {logo}></img> */}
+                        <img className="" alt="logo" src = {logo_escultura}></img>
                         </Link>
                     </div>   
                     <div className="letrasHeader" >
                         <div className="Titulo">
+                       
                             {nameTitulo}
+                    
                         </div>
                         {navBar}
                     </div>

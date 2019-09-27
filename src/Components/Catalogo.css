@@ -1,7 +1,7 @@
 
 .catalogoContainer{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap:  wrap;
     margin-top: 2rem;
     margin-left: auto;
@@ -15,5 +15,11 @@
         justify-content: center;   
         margin-left: auto;   
         margin-right: auto;  
+    }
+}
+
+@media only screen and (min-width: 1500px) {   
+    .catalogoContainer{      
+        width: 65%;
     }
 }

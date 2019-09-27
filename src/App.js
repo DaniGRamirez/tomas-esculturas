@@ -10,6 +10,7 @@ import Bio from './Components/Bio';
 import TallerGallery from './Components/TallerGallery';
 import Exposiciones from './Components/Exposiciones';
 import Contacto from './Components/Contacto';
+import Footer from './Components/Footer';
 
 import{
   BrowserRouter as Router,
@@ -52,22 +53,25 @@ class App extends Component {
       navBurguerMenu = ""        
     return (     
       <Router>
-        <div>
-          <Header isDesktop={this.state.isDesktop}/>             
-          {navBurguerMenu}
-          <Route exact path='/' component={Home}/> 
-          <Route exact path='/Catalogo' component={Catalogo}/>    
-          <Route path='/Escultura' component={EsculturaViewer}/>  
-          <Route path='/Creando' component={TallerGallery}/>  
-          <Route path='/Bio' component={Bio}/>  
-          <Route path='/Exposiciones' component={Exposiciones}/>  
-          <Route path='/Contacto' component={Contacto}/>  
-          {/* <Route exact path='/' component={Home}/> 
-          <Route exact path='/Photos' component={Photos}/>        
-          <Route exact path='/About' component={About}/>  
-          <Route exact path='/Contact' component={SimpleContact}/>    */}
+        <div className="AppContainer">
+          <div className="ContentContainer">
+            <Header isDesktop={this.state.isDesktop}/>             
+            {navBurguerMenu}
+            <Route exact path='/' component={Home}/> 
+            <Route exact path='/Catalogo' component={Catalogo}/>    
+            <Route path='/Escultura' component={EsculturaViewer}/>  
+            <Route path='/Creando' component={TallerGallery}/>  
+            <Route path='/Bio' component={Bio}/>  
+            <Route path='/Exposiciones' component={Exposiciones}/>  
+            <Route path='/Contacto' component={Contacto}/>  
+            {/* <Route exact path='/' component={Home}/> 
+            <Route exact path='/Photos' component={Photos}/>        
+            <Route exact path='/About' component={About}/>  
+            <Route exact path='/Contact' component={SimpleContact}/>    */}          
+          </div>
+          <Footer/>
         </div>
-      </Router>
+      </Router>     
     );
   }
 }

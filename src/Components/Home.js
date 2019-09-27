@@ -9,7 +9,7 @@ class Home extends Component {
     render(){
         return (                   
             <div className="HomeContainer">  
-            <img src = "https://media.graphcms.com/bjhocHjSj2JE6QqriHKo"></img>
+            <img src = "https://media.graphcms.com/iG36ckBRYe2ZCWmkiPt0"></img>
           </div>)
     }
 

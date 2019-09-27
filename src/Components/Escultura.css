@@ -8,6 +8,7 @@
     text-align: center;    
     justify-content: flex-start;
     overflow: hidden;
+    margin-bottom: 20px;
 }
 
 .esculturaContainer :hover{
