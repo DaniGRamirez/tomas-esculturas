@@ -3,14 +3,10 @@ const path = require('path');
 const port = process.env.PORT || 8080;
 const app = express();
 const nodemailer = require('nodemailer');
-var bodyParser = require('bady-parser')
+var bodyParser = require('body-parser')
 
 
 console.log("test mail");
-// Generate test SMTP service account from ethereal.email
-// Only needed if you don't have a real mail account for testing
-//let testAccount = await nodemailer.createTestAccount();
-
 var smtpTransport = nodemailer.createTransport({
     service: 'gmail',
     secure: true,
