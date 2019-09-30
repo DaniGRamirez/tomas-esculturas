@@ -102,7 +102,7 @@
     color: red;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1250px) {
     .letterLogo {
       font-size: 35px;         
     }
@@ -134,7 +134,7 @@
 
     .logoInstaHeader{
         margin-left: auto;
-        width: 50px;       
+        width: 25px;       
     }
   }
 

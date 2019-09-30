@@ -4,6 +4,7 @@
     width: 95%;
     margin: 25px auto auto auto;
     justify-content: space-around;
+    align-items: center;
 }
 
 .ImgBioContainer{    
@@ -26,6 +27,15 @@
     margin: 20px 0 20px 0;
     text-align: center;   
     border-left: solid 2px rgb(59, 59, 59);
+
+    font-family: 'Quicksand', sans-serif !important;
+    color: #616161;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-decoration: none;
+    margin-bottom: 0;
+    font-size: 1em;
+    padding: 5px 10px;
 }
 
 .BioTextContainer p{
@@ -33,11 +43,11 @@
     letter-spacing: 0.2rem;
     text-align: left;
     margin-left: 10%;
-    font-weight: lighter;  
-    font-size: medium;  
+   
 }
 .BioTextContainer h1{
 
+    font-variant: petite-caps;
     font-weight: 400;    
 }
 

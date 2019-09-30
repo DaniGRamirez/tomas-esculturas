@@ -50,21 +50,32 @@ class GalleryTest extends Component {
 
   desiredColumns()
   {
-   if(window.innerWidth < 800) 
-   return 2;
-   else 
-   return 3;
+    //console.log(this.props);
+
+    //if(this.props.fixedColumns !== 0)
+      if(window.innerWidth < 800)       
+        return 2;       
+      else 
+        return 3;
+    // else
+    //   return this.props.fixedColumns;
   }
 
   drawGallery()
   {
     // console.log("DrawGallery");
     // console.log(this.props.selectedPhotos);
+    let columnsRender;
+    if(this.props.fixedColumns ==  -1)
+      columnsRender = this.desiredColumns();
+    else
+    columnsRender = this.props.fixedColumns;
+    console.log(this.props);
     if(this.props.selectedPhotos.length != 0)
     {     
       return(        
         <div>
-          <Gallery photos={this.props.selectedPhotos} columns={this.desiredColumns} onClick={this.openLightbox} direction={"column"} />
+          <Gallery photos={this.props.selectedPhotos} columns={columnsRender} onClick={this.openLightbox} direction={"column"} />
             <Lightbox images={this.props.selectedPhotos}
             onClose={this.closeLightbox}
             onClickPrev={this.gotoPrevious}
@@ -84,7 +95,11 @@ class GalleryTest extends Component {
           {this.drawGallery()}
         </div>
       ) 
-  }   
+  }    
 }
+
+GalleryTest.defaultProps = {
+  fixedColumns: -1,  
+};
 
 export default GalleryTest;

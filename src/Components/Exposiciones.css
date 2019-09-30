@@ -1,0 +1,132 @@
+.ExposicionesContainer{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ExposicionesActualesContainer{
+    display: flex;
+    flex-direction: column;   
+}
+
+.ExposicionesActualesContainer h1{
+
+    align-self: center;
+
+    font-family: 'Quicksand', sans-serif !important;
+    color: #3f3f3f;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-decoration: none;
+    margin-bottom: 30px;
+    font-size: 2em;
+    padding: 5px 10px;    
+}
+
+.Exposicion{
+    display: flex;
+    flex-direction: row;   
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    border-bottom-style: inset;
+    padding-bottom: 2rem;
+    align-items: flex-end;
+    margin-bottom: 4rem;
+}
+
+.Exposicion:nth-child(even)
+{
+    flex-direction: row-reverse;      
+}
+
+.ExposicionImgContainer{
+    flex-basis: 40%;
+    margin: auto;
+}
+
+#fotoPrincipal{    
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+
+.InfoExposicion{
+    flex-basis: 40%;
+    font-family: 'Quicksand', sans-serif !important;
+    color: #616161;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-decoration: none;
+    margin-bottom: 0;
+    font-size: 1em;
+    padding: 5px 10px;    
+}
+
+.InfoExposicion h1{
+    padding: 0;
+}
+
+.direccionContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+#hasta{
+    margin-block-end: auto;
+}
+
+#webExposicion{
+    padding: 0;
+    font-size: inherit;
+    color: inherit;
+}
+
+#webExposicion:hover{   
+    color: #3f3f3f;
+}
+
+#mapa img{    
+    width: 20px;
+    padding-left: 5px;
+}
+
+#mapa img:hover{    
+    width: 22px;
+    color: #3f3f3f;
+}
+
+.ExposicionGalleryContainer
+{
+    flex-wrap: nowrap;
+    flex-basis: 60%;
+    margin-top: 1rem;
+}
+
+@media only screen and (min-width: 1250px) {   
+   
+   .ExposicionesContainer{
+       width: 70%;
+   }
+}
+
+@media only screen and (max-width: 750px) {   
+   
+    .ExposicionesContainer{
+        width: 90%;
+    }
+
+    .Exposicion{        
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .Exposicion:nth-child(even)
+    {
+        flex-direction: inherit;      
+    }
+
+    #fotoPrincipal{
+        max-width: inherit;
+    }
+ }

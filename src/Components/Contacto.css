@@ -5,6 +5,15 @@
     width: 60%;
     margin-left: auto;
     margin-right: auto;
+
+    font-family: 'Quicksand', sans-serif !important;
+    color: #616161;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-decoration: none;
+    margin-bottom: 0;
+    font-size: 1em;
+    padding: 5px 10px;
 }
 
 .ContactElement{
