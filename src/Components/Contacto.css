@@ -63,3 +63,30 @@
         size: 50%; 
     }
 }
+
+@media only screen and (max-width: 400px) {   
+
+    .ContactContainer {
+        margin-top: 30px;
+    }
+
+    .ContactElement{
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 95%;
+        height: inherit;
+    }
+
+    .ContactElement img{
+        
+        margin-left: 2%;   
+        width: 15%;
+        height: auto;
+    }
+
+    .ContactElement h1{      
+        margin-right: auto;       
+        margin-left: 10px;
+    }
+}
+

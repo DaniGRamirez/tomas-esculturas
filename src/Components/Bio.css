@@ -80,3 +80,25 @@
         margin-right: 15%;
     }
 }
+
+@media only screen and (max-width: 400px) {   
+
+    #nombreNav {     
+        font-size: 1.1em;
+        margin-left: 10px;        
+        margin-right: auto;
+    }
+
+    .BioTextContainer{
+        margin: 5px ;
+        padding: inherit;
+    }
+
+    .BioTextContainer p{
+
+        text-align: center;
+        margin-left: 2%;
+        margin-right: 2%;
+        font-size: 0.8em;
+    }
+}

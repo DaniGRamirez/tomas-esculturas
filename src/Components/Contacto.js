@@ -7,20 +7,27 @@ const nodemailer = require('nodemailer');
 async function main() {
     // Generate test SMTP service account from ethereal.email
     // Only needed if you don't have a real mail account for testing
-    let testAccount = await nodemailer.createTestAccount();
-
-    // create reusable transporter object using the default SMTP transport
-    var transporter = nodemailer.createTransport("SMTP",{
+    //let testAccount = await nodemailer.createTestAccount();
+   
+    var smtpTransport = nodemailer.createTransport({
+        service: 'Gmail', // sets automatically host, port and connection security settings
         auth: {
             user: "tomasgr.escultura@gmail.com", // service is detected from the username
             pass: "hornocaido"
         }
     });
+    // // create reusable transporter object using the default SMTP transport
+    // var transporter = nodemailer.createTransport("SMTP",{
+    //     auth: {
+    //         user: "tomasgr.escultura@gmail.com", // service is detected from the username
+    //         pass: "hornocaido"
+    //     }
+    // });
 
     // send mail with defined transport object
-    let info = await transporter.sendMail({
+    let info = await smtpTransport.sendMail({
         from: '"Fred Foo 👻" <foo@example.com>', // sender address
-        to: 'danigramirez27@gmail.com,', // list of receivers
+        to: 'tomasgr.escultura@gmail.com', // list of receivers
         subject: 'Hello ✔', // Subject line
         text: 'Hello world?', // plain text body
         html: '<b>Hello world?</b>' // html body
