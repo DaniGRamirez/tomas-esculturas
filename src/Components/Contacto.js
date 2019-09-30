@@ -10,35 +10,30 @@ async function main() {
     //let testAccount = await nodemailer.createTestAccount();
    
     var smtpTransport = nodemailer.createTransport({
-        service: 'Gmail', // sets automatically host, port and connection security settings
-        auth: {
-            user: "tomasgr.escultura@gmail.com", // service is detected from the username
-            pass: "hornocaido"
+        host: 'gmail',
+        secure: true,
+        auth: {           
+            user: 'tomasgr.escultura@gmail.com',
+            pass: 'hornocaido'
         }
     });
-    // // create reusable transporter object using the default SMTP transport
-    // var transporter = nodemailer.createTransport("SMTP",{
-    //     auth: {
-    //         user: "tomasgr.escultura@gmail.com", // service is detected from the username
-    //         pass: "hornocaido"
-    //     }
-    // });
 
-    // send mail with defined transport object
-    let info = await smtpTransport.sendMail({
+    var mailOptions = {
         from: '"Fred Foo 👻" <foo@example.com>', // sender address
         to: 'tomasgr.escultura@gmail.com', // list of receivers
         subject: 'Hello ✔', // Subject line
         text: 'Hello world?', // plain text body
         html: '<b>Hello world?</b>' // html body
-    });
+      };
+           
 
-    console.log('Message sent: %s', info.messageId);
-    // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
-
-    // Preview only available when sending through an Ethereal account
-    console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
-    // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
+      smtpTransport.sendMail(mailOptions, function(error){
+        if (error) {
+          console.log(error);
+        } else {
+          console.log('Email sent');
+        }       
+      });          
 }
 
 main().catch(console.error);
