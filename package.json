@@ -6,6 +6,7 @@
     "apollo-boost": "^0.4.3",
     "apollo-cache-inmemory": "^1.6.2",
     "apollo-link-http": "^1.5.15",
+    "axios": "^0.19.0",
     "express": "^4.17.1",
     "express-favicon": "^2.0.1",
     "graphql": "^14.4.2",
@@ -26,7 +27,7 @@
     "typekit": "^0.1.1"
   },
   "scripts": {
-    "start_react" :"react-scripts start",
+    "start_react": "react-scripts start",
     "start": "node server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
