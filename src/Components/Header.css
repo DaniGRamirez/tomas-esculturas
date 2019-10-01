@@ -19,7 +19,8 @@
 }
 
 .header{
-    background-color: rgba(228, 228, 228, 0.61);
+    /* background-image: url("https://media.graphcms.com/GV085o1LTPmiGO9kk64Z");         */
+    background-color: rgba(228, 228, 228, 0.40);
     margin: 0;
     padding: 0;   
     display: flex;  

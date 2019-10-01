@@ -5,6 +5,22 @@
     margin-right: auto;
 }
 
+#buttonBack{
+    position: fixed;    
+    width: 50px;
+    margin: 10px;
+    transition:  0.25s ease;    
+}
+
+.fixedToTop #buttonBack{
+    top: 0;
+    margin: 20px;
+}
+
+#buttonBack:hover{
+    opacity: 0.25;
+}
+
 .EsculturaInfo
 {
     display: flex;   

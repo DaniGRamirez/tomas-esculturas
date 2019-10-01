@@ -5,14 +5,40 @@ import PhotoGallery from './PhotosGallery';
 import Escultura from './Escultura';
 import './EsculturaViewer.css';
 import ReactDOM from 'react-dom';
+import{ 
+  Link
+} from "react-router-dom"
 
 let selected;
 let formatedPhotos = [];
+
+
+
+
 class EsculturaViewer extends Component {  
 
     constructor(props){
         super(props);
         selected = this.props.location.id;
+    }
+
+    componentDidMount(){
+      window.onscroll = this.onScroll;
+    }
+
+    componentWillUnmount(){
+      window.onscroll = null;
+    }
+    
+    onScroll(){   
+      console.log(document.getElementById("myHeader").offsetHeight);
+      var offsetScroll = document.getElementById("myHeader").offsetHeight;
+      if(window.pageYOffset > offsetScroll){
+        document.getElementById("buttonBackContainer").classList.add("fixedToTop");
+      }
+      else{
+        document.getElementById("buttonBackContainer").classList.remove("fixedToTop");
+      }    
     }
 
     selectEscultura(fetchEsculturas,nameSelected){
@@ -62,25 +88,30 @@ class EsculturaViewer extends Component {
             console.log(selected);
             // console.log(selected);           
             // console.log(formatedPhotos);
-            return (                   
-              <div className="EsculturaContainer">                                      
-                  {/* <h1>Escultura {selected.nombre}</h1> */}
-                  {/* <img src={selected.fotosEscultura[0].foto.url}></img> */}
-                  <div className = "EsculturaInfo">
-                    <Escultura  disabled = {true} esculturaData ={selected} history={this.props.history}></Escultura>
-                    <div className ="EsculturaDescription">
-                      <h1>{selected.nombre}</h1>
-                      <p className="TextoDescripcion" id="Descripcion">
-                        {selected.descripcion}                        
-                      </p>                     
-                      <p className="TextoDescripcion" id="Medidas">                        
-                          {selected.medidas}
-                      </p>                
-                     </div>                                     
-                  </div>
-                  <div className="galleryEsculturaContainer">
-                    <PhotoGallery selectedPhotos={formatedPhotos}></PhotoGallery>
-                  </div>
+            return (      
+              <div>
+                <div id="buttonBackContainer">
+                  <Link to="/Catalogo" >                 
+                    <img id="buttonBack" src="https://image.flaticon.com/icons/svg/149/149153.svg"></img>
+                  </Link>
+                </div>
+                <div className="EsculturaContainer">                   
+                    <div className = "EsculturaInfo">
+                      <Escultura  disabled = {true} esculturaData ={selected} history={this.props.history}></Escultura>
+                      <div className ="EsculturaDescription">
+                        <h1>{selected.nombre}</h1>
+                        <p className="TextoDescripcion" id="Descripcion">
+                          {selected.descripcion}                        
+                        </p>                     
+                        <p className="TextoDescripcion" id="Medidas">                        
+                            {selected.medidas}
+                        </p>                
+                      </div>                                     
+                    </div>
+                    <div className="galleryEsculturaContainer">
+                      <PhotoGallery selectedPhotos={formatedPhotos}></PhotoGallery>
+                    </div>
+              </div>             
             </div>)
         }
 

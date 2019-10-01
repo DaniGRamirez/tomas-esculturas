@@ -10,11 +10,10 @@ import{
   let logo_escultura = "https://media.graphcms.com/RboDW91bQxG4PzNYejdA";
   let logo_instagram = "https://image.flaticon.com/icons/svg/733/733614.svg";
 
-
 class Header extends Component {
     showSettings (event) {
         event.preventDefault();       
-      }
+      }    
 
   render(){
     let navBar;
@@ -54,7 +53,7 @@ class Header extends Component {
 
       return(         
         <div className="bg-light-gray">
-            <div className= "header">    
+            <div className= "header" id="myHeader">     
                 <div className= "centerItems">                
                     <div className= "logo" >
                         <Link to="/">
@@ -78,5 +77,7 @@ class Header extends Component {
           ); 
   }   
 }
+
+
 
 export default Header;

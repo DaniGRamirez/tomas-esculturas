@@ -25,10 +25,6 @@ app.get('/ping', function (req, res) {
  return res.send('pong');
 });
 
-app.get('/*', function (req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
-
 app.post('/api/contacto',function(req,res,next){
   console.log("Function api in server");
       var mailOptions = {
@@ -48,6 +44,11 @@ app.post('/api/contacto',function(req,res,next){
       });   
         console.log("Llamada a server correcta");
 });
+
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
 
 app.listen(port);
 
