@@ -1,8 +1,26 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import './Contacto.css';
+import axios from 'axios';
 
 class Contacto extends Component {              
+
+componentDidMount(){
+    var testMail = document.getElementById("testEmail");
+    if(testMail != null)
+    {
+        document.getElementById("testEmail").addEventListener("click",function(){
+            console.log("Prueba mail");       
+              let datos = "prueba";
+              axios.post('/api/contacto',datos).
+                then(function(response){
+                    alert("Email mandado");
+                }).catch(function(error){
+                    console.log(error);
+                });
+          });
+    }
+}
 
     render(){
         return (                   

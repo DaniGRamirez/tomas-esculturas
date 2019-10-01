@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3000;
 const app = express();
 const nodemailer = require('nodemailer');
 var bodyParser = require('body-parser')
@@ -25,7 +25,7 @@ app.get('/ping', function (req, res) {
  return res.send('pong');
 });
 
-app.post('/api/contacto',function(req,res,next){
+app.post('/api/contacto/',function(req,res,next){
   console.log("Function api in server");
       var mailOptions = {
         from: '"Dani 👻" <danigramirez27@gmail.com>', // sender address
