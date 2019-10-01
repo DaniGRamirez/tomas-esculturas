@@ -19,7 +19,7 @@ class EsculturaViewer extends Component {
 
     constructor(props){
         super(props);
-        selected = this.props.location.id;
+        selected = this.props.location.id;        
     }
 
     componentDidMount(){
