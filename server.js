@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
-const port = process.env.baseURL || 3000;
+const port = process.env.PORT || 3000;
+const port_post = process.env.baseUrl || 3000;
 const app = express();
 const nodemailer = require('nodemailer');
 var bodyParser = require('body-parser')
@@ -51,4 +52,5 @@ app.get('/*', function (req, res) {
 
 
 app.listen(port);
+app.listen(port_post);
 
