@@ -20,6 +20,9 @@ componentDidMount(){
                 });
           });
     }
+    else{
+        console.log("testMail button is null");
+    }
 }
 
     render(){

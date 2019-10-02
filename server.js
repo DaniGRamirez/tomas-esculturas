@@ -1,19 +1,20 @@
 const express = require('express');
 const path = require('path');
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 const port_post = process.env.baseUrl || 3000;
 const app = express();
 const nodemailer = require('nodemailer');
 var bodyParser = require('body-parser')
 
 
-console.log("test mail");
+console.log("test mail server side");
+
 var smtpTransport = nodemailer.createTransport({
     service: 'gmail',
     secure: true,
     auth: {           
         user: 'tomasgr.escultura@gmail.com',
-        pass: 'hornocaido'
+        pass: 'horno-caido'
     }
 });       
 
@@ -51,6 +52,6 @@ app.get('/*', function (req, res) {
 });
 
 
-app.listen(port);
-app.listen(port_post);
+app.listen(3000);
+//app.listen(port_post);
 
