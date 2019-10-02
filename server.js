@@ -1,7 +1,6 @@
 const express = require('express');
 const path = require('path');
 const port = process.env.PORT || 8080;
-const port_post = process.env.baseUrl || 3000;
 const app = express();
 const nodemailer = require('nodemailer');
 var bodyParser = require('body-parser')
@@ -42,6 +41,7 @@ app.post('/api/contacto/',function(req,res,next){
           console.log(error);
         } else {
           console.log('Email sent');
+          res.send("ok");
         }       
       });   
         console.log("Llamada a server correcta");
