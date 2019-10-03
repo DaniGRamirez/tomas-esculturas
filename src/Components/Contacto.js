@@ -48,7 +48,7 @@ componentDidMount(){
                     <h1> Contacta con Tomás </h1>
                     <div className="inputContainer">
                         <label className="labelForm">Mail* </label>
-                        <input type="email" id="correo" placeholder="name@example.com" required></input>
+                        <input type="email" id="correo" placeholder="nombre@ejemplo.com" required></input>
                     </div>
                     <div className="inputContainer">
                         <label className="labelForm">Nombre* </label>
