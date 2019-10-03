@@ -20,3 +20,32 @@
     width: 100%;
     height: auto;
 }
+
+@media only screen and (max-width: 800px) {   
+    .HomeContainer .contentHome{
+        height: 70px;
+        font-size: smaller;
+        padding: 5px;
+    }
+
+    .contentHome h1{                    
+        font-size: small;                
+    }
+    .contentHome p{   
+        font-size: small;                
+    }
+}
+
+@media only screen and (max-width: 550px) {   
+    .HomeContainer .contentHome{
+        height: 50px;      
+        padding: 5px;
+    }
+
+    .contentHome h1{                    
+        font-size: smaller;                
+    }
+    .contentHome p{   
+        font-size: smaller;                
+    }
+}

@@ -93,4 +93,5 @@
 
 #logoInsta{
   width: 50px;
+  filter: invert(100%);
 }
