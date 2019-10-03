@@ -20,18 +20,17 @@
     display: flex;
     flex-direction: row;
     height: 50px;
-    margin-bottom: 15px;           
-    background-color: greenyellow;
+    margin-bottom: 15px;               
 }
 
 .ContactElement h1{
     font-size: 100%;
-    align-self: center;      
-    background-color: red;
+    align-self: center;          
 }    
 
 .ContactElement img{    
-    background-color: purple;
+    margin-left: 2%;
+    margin-right: 5%;    
     height: 60px;
 }    
 

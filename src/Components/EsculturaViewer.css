@@ -71,6 +71,10 @@
    
 
 @media only screen and (max-width: 600px) {   
+    
+    .EsculturaContainer{
+        width: 90%;
+    }
     .EsculturaInfo
     {               
         flex-direction: column;
@@ -78,7 +82,7 @@
     }
     
     .EsculturaDescription{                 
-        margin : 15px 10% 15px 10%;     
+        margin: inherit;   
     }
    
     #Descripcion{
