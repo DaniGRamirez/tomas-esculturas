@@ -29,9 +29,9 @@ class Header extends Component {
     }   
     else
     {
-
         nameTomas = "";
-        nameTitulo = "Tomas Garcia Redondo";
+        // nameTitulo = "Tomas Garcia Redondo";
+        nameTitulo = <Link id="linkTitulo" to="/" >Tomás García Redondo</Link> 
         navBar =  
       
         <div className="navs">                               
@@ -54,17 +54,14 @@ class Header extends Component {
         <div className="bg-light-gray">
             <div className= "header" id="myHeader">     
                 <div className= "centerItems">                
-                    <div className= "logo" >
-                        <Link to="/">
-                        {/* <img className="" alt="logo" src = {logo}></img> */}
+                    {/* <div className= "logo" >
+                        <Link to="/">                      
                         <img className="" alt="logo" src = {logo_escultura}></img>
                         </Link>
-                    </div>   
+                    </div>    */}
                     <div className="letrasHeader" >
-                        <div className="Titulo">
-                       
-                            {nameTitulo}
-                    
+                        <div className="Titulo">                       
+                            {nameTitulo}                    
                         </div>
                         {navBar}
                     </div>
