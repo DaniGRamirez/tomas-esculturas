@@ -20,8 +20,7 @@
     display: flex;
     flex-direction: row;
     height: 50px;
-    margin-bottom: 15px;       
-    width: 40%;
+    margin-bottom: 15px;           
     background-color: greenyellow;
 }
 
@@ -33,6 +32,7 @@
 
 .ContactElement img{    
     background-color: purple;
+    height: 60px;
 }    
 
 .formMailContainer{
@@ -145,10 +145,6 @@
     .ContactElement h1{
         font-size: 75%;            
     }
-
-    .ContactElement img{       
-        size: 50%; 
-    }    
 }
 
 @media only screen and (max-width: 600px) {      
@@ -170,9 +166,9 @@
 
     .ContactElement img{
         
-        margin-left: 2%;   
-        width: 15%;
-        height: auto;
+        margin-left: 2%;          
+        height: 30px;
+        width: auto;
     }
 
     .ContactElement h1{      
