@@ -31,7 +31,7 @@ app.post('/api/contacto/',function(req,res,next){
       var mailOptions = {
         from: '"Dani 👻" <danigramirez27@gmail.com>', // sender address
         to: 'tomasgr.escultura@gmail.com', // list of receivers
-        subject: 'Prueba email dani ✔', // Subject line
+        subject: `Prueba email dani ✔ ${req.datos}`, // Subject line
         text: 'Hello world?', // plain text body
         html: '<b>Hello world?</b>' // html body
       };            

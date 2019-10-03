@@ -14,6 +14,8 @@
     "graphql-tag": "^2.10.1",
     "lodash": "^4.17.15",
     "nodemailer": "^6.3.0",
+    "nodemon": "^1.19.3",
+    "npm-run-all": "^4.1.5",
     "path": "^0.12.7",
     "react": "^16.8.6",
     "react-apollo": "^2.5.8",
@@ -32,7 +34,9 @@
     "start": "node server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server": "nodemon serverTest.js",
+    "dev": " run-p server start_react"
   },
   "eslintConfig": {
     "extends": "react-app"
