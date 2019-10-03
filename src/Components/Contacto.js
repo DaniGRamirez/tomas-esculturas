@@ -26,11 +26,8 @@ componentDidMount(){
                     console.log(datos);
 
                   axios.post('/api/contacto',datos).
-                    then(function(response){
-                        if(response == "ok")
-                            alert("Email mandado");
-                        else
-                            alert("Error al mandar mail");
+                    then(function(response){                    
+                            alert("Email mandado");                        
                     }).catch(function(error){
                         console.log(error);
                         alert('No se ha podido enviar el email. Disculpe las molestias');
