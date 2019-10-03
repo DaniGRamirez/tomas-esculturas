@@ -9,9 +9,12 @@ import{
   Link
 } from "react-router-dom"
 
+
+import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
+
 let selected;
 let formatedPhotos = [];
-
+ 
 
 
 
@@ -30,8 +33,7 @@ class EsculturaViewer extends Component {
       window.onscroll = null;
     }
     
-    onScroll(){   
-      console.log(document.getElementById("myHeader").offsetHeight);
+    onScroll(){         
       var offsetScroll = document.getElementById("myHeader").offsetHeight;
       if(window.pageYOffset > offsetScroll){
         document.getElementById("buttonBackContainer").classList.add("fixedToTop");
@@ -52,6 +54,11 @@ class EsculturaViewer extends Component {
           }
     }
 
+    formatHtmlText(textHtml){
+      var html_form =  textHtml.replace('"','');        
+      return  <div className="TextoDescripcion">{ReactHtmlParser(html_form)}</div> ;      
+    }
+
     formatPhotosStructure(fotosEscultura){
         formatedPhotos = [];
         var i;
@@ -67,27 +74,19 @@ class EsculturaViewer extends Component {
         }
     }
 
-    render(){
-        console.log(this.props.history);
-
+    render(){        
         let { loading, error,esculturas} = this.props.data;
         
         if (error){
-            console.log(error);
-            return <h1>Error</h1>
+          console.log(error);
+          return <h1>Error</h1>
         }
-
-        if(!loading){
-
-            console.log(this.props.match);
-            console.log(this.props.location);
-            var idEscultura = this.props.location.pathname.replace("/Escultura/",'');
-            console.log(idEscultura);
+        
+        if(!loading){                        
+           
+            var idEscultura = this.props.location.pathname.replace("/Escultura/",'');            
             this.selectEscultura(esculturas,idEscultura);
-            this.formatPhotosStructure(selected.fotosEscultura);
-            console.log(selected);
-            // console.log(selected);           
-            // console.log(formatedPhotos);
+            this.formatPhotosStructure(selected.fotosEscultura);                        
             return (      
               <div>
                 <div id="buttonBackContainer">
@@ -99,17 +98,15 @@ class EsculturaViewer extends Component {
                     <div className = "EsculturaInfo">
                       <Escultura  disabled = {true} esculturaData ={selected} history={this.props.history}></Escultura>
                       <div className ="EsculturaDescription">
-                        <h1>{selected.nombre}</h1>
-                        <p className="TextoDescripcion" id="Descripcion">
-                          {selected.descripcion}                        
-                        </p>                     
+                        <h1>{selected.nombre}</h1>                                   
+                        {this.formatHtmlText(selected.richDescripcion.html)}                                                                                 
                         <p className="TextoDescripcion" id="Medidas">                        
                             {selected.medidas}
-                        </p>                
+                        </p>  
                       </div>                                     
                     </div>
                     <div className="galleryEsculturaContainer">
-                      <PhotoGallery selectedPhotos={formatedPhotos}></PhotoGallery>
+                      <PhotoGallery fixedColumns={4} selectedPhotos={formatedPhotos} ></PhotoGallery>
                     </div>
               </div>             
             </div>)
@@ -128,9 +125,14 @@ export const escultura = gql`
     esculturas{
       nombre      
       descripcion      
+      richDescripcion{
+        text
+        html
+      }
       medidas
       materialesEscultura{
-        material        
+        material    
+        id    
       }      
       fotosEscultura{
           nombre
@@ -144,7 +146,8 @@ export const escultura = gql`
     }
   }
 `
-console.log(selected);
+// console.log(selected);
+
 export default graphql(escultura,{    
     options: ({match,}) => ({
       variables: {

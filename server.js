@@ -27,8 +27,7 @@ app.get('/ping', function (req, res) {
 });
 
 app.post('/api/contacto/',function(req,res,next){
-  console.log("Prueba nodemon");
-  console.log(req.body);
+  console.log("Prueba nodemon");  
       var mailOptions = {
         from: `${req.body.email}`, // sender address
         to: 'tomasgr.escultura@gmail.com', // list of receivers

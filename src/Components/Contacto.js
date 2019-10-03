@@ -22,9 +22,7 @@ componentDidMount(){
                       email: email,        
                       asunto: asunto,
                       mensaje: mensaje,    
-                  }                
-                    console.log(datos);
-
+                  }                                    
                   axios.post('/api/contacto',datos).
                     then(function(response){                    
                             alert("Email mandado");                        

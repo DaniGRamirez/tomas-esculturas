@@ -12,38 +12,36 @@ class TallerGallery extends Component {
         super(props);       
     }       
 
-    formatPhotosStructure(fotosTaller){
-        console.log(fotosTaller.fotosTaller);
+    formatPhotosStructure(fotosTaller){        
         formatedPhotos = [];
         var i;
         for (i = 0; i < fotosTaller.fotosTaller.length; i++) {             
-            
+            let scaleFactor = Math.random() +1;
             formatedPhotos.push(
                 {
                     src: fotosTaller.fotosTaller[i].foto.url,
-                    width:fotosTaller.fotosTaller[i].widthRatio,
-                    height:fotosTaller.fotosTaller[i].heightRatio
+                    width:fotosTaller.fotosTaller[i].widthRatio * scaleFactor,
+                    height:fotosTaller.fotosTaller[i].heightRatio * scaleFactor
                 }
             )
         }
     }
 
     render(){
-        console.log(this.props.history);
-        console.log(this.props.data);
+        // console.log(this.props.history);
+        // console.log(this.props.data);
         let { loading, error,galeriaTallers} = this.props.data;
-        
+        console.log(galeriaTallers);
         if (error){
             console.log(error);
             return <h1>Error</h1>
         }
 
-        if(!loading){
-            console.log(this.props.match);                              
+        if(!loading){                                      
             this.formatPhotosStructure(galeriaTallers[0]);                  
             return (                   
               <div className="TallerGallery">                                                                                  
-                  <PhotoGallery selectedPhotos={formatedPhotos}></PhotoGallery>
+                  <PhotoGallery typeDirection="row" selectedPhotos={formatedPhotos}></PhotoGallery>
             </div>)
         }
 
@@ -65,7 +63,7 @@ export const fotosTaller = gql`
             url
           }
           widthRatio
-          heightRatio
+          heightRatio       
       }
     }
   }

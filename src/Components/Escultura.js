@@ -9,10 +9,8 @@ class Escultura extends Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
-    handleClick(){            
-        console.log("Escultura clickada ");
-        console.log(this.props);
-        console.log(this.props.history);        
+    handleClick(){                    
+        // console.log(this.props.history);        
         this.props.history.push({
             pathname: '/Escultura/' + this.props.esculturaData.nombre,
             id: this.props.esculturaData.nombre,           
@@ -20,6 +18,7 @@ class Escultura extends Component {
     }
 
     render(){
+        // console.log(this.props.esculturaData);
         return(
             <div className ="esculturaContainer" onClick = {this.handleClick}>               
                 <div className="imgContainer">
@@ -28,7 +27,8 @@ class Escultura extends Component {
                 <h1 id="nombre">{this.props.esculturaData.nombre} </h1>
                 <div className="materialesContainer">
                     {this.props.esculturaData.materialesEscultura.map(material =>(                                          
-                        <h1 className="material">{material.material}</h1>
+                        // console.log(material)
+                        <h1 key={material.id} className="material">{material.material}</h1>
                         ))
                     }
                 </div>              

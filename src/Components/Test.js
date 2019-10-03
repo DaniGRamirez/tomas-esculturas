@@ -8,8 +8,7 @@ const Test = ({ data: { loading, error,esculturas } }) => {
      console.log(error); 
     return <h1>Error fetching the post!</h1>    
 } 
-  if (!loading) {    
-    console.log(esculturas);
+  if (!loading) {        
     return (        
         <div>
         {/* <div>
@@ -58,6 +57,5 @@ export const esculturas = gql`
   }
 `
 
-console.log(esculturas);
 
 export default graphql(esculturas)(Test)

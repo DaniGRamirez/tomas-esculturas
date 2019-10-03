@@ -12,23 +12,21 @@ import{
 
 class Catalogo extends Component 
 {
-    render(){
-        console.log(this.props.history);
-
+    render(){        
         let { loading, error,esculturas } = this.props.data;
         
         if (error){
 
         }
 
-        if(!loading){
-                    
-            console.log(esculturas);
+        if(!loading){                    
+            // console.log(this.props.data.esculturas);
             return (                   
               <div>                                      
                   <div className ="catalogoContainer" > 
                       {esculturas.map(escultura =>(                                          
-                        <Escultura esculturaData ={escultura} history={this.props.history}></Escultura>                        
+                        // console.log(escultura)         
+                        <Escultura key={escultura.id} esculturaData ={escultura} history={this.props.history}></Escultura>                        
                         ))
                       }   
                   </div>                                 
@@ -43,11 +41,13 @@ class Catalogo extends Component
 }
    
 export const esculturas = gql`
-  query esculturas {
+  query esculturas { 
     esculturas{
       nombre      
+      id
       materialesEscultura{
-        material        
+        material   
+        id     
       }      
       fotosEscultura{
           nombre
@@ -60,6 +60,5 @@ export const esculturas = gql`
   }
 `
 
-console.log(esculturas);
 
 export default graphql(esculturas)(Catalogo)

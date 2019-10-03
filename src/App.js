@@ -28,20 +28,16 @@ class App extends Component {
 
     this.updatePredicate = this.updatePredicate.bind(this);
   }
-    componentDidMount() {
-      // console.log("Mount in App");
-      // console.log(this.props.store);
+    componentDidMount() {    
       this.updatePredicate();
-      window.addEventListener("resize", this.updatePredicate);
-      // console.log(this.props);
+      window.addEventListener("resize", this.updatePredicate);      
     }
 
     componentWillUnmount() {
       window.removeEventListener("resize", this.updatePredicate);
     }
 
-  updatePredicate() {
-    // console.log(window.innerWidth);
+  updatePredicate() {    
     this.setState({ isDesktop: window.innerWidth > 600 });
   }
 

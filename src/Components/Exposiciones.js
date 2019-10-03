@@ -14,7 +14,7 @@ class Exposiciones extends Component {
 
     renderExposiciones(_exposicion_render)
     {
-        console.log(_exposicion_render);
+        // console.log(_exposicion_render);
         let formatedPhotos = [];
         var i;
         for (i = 0; i < _exposicion_render.fotoEsculturas.length; i++) {             
@@ -27,18 +27,15 @@ class Exposiciones extends Component {
                 }
             )
         }
-
-        console.log(_exposicion_render.web);
+        
         let web_info = "";
         if(!isEmpty(_exposicion_render.web))
             web_info =<a id="webExposicion" target="blank" href={_exposicion_render.web}> <b>Web:</b> {_exposicion_render.web}</a>
 
-
-
-        console.log(formatedPhotos);
+        // console.log(formatedPhotos);
 
             return(
-                <div className="Exposicion">
+                <div key={_exposicion_render.id} className="Exposicion">
                     <div className="ExposicionImgContainer">
                         <img id="fotoPrincipal" src={_exposicion_render.fotoPrincipal.url}/>
                     </div>
@@ -70,8 +67,7 @@ class Exposiciones extends Component {
             console.log(error);
         }
         
-        if(!loading){
-            console.log(exposicionesActivases);
+        if(!loading){            
             return (                   
                 <div className="ExposicionesContainer">                        
                     <div className="ExposicionesActualesContainer">
@@ -99,6 +95,7 @@ export const contentExposiciones = gql`
     exposicionesActivases{
             exposiciones{                
                 nombre
+                id
                 fechaInicio
                 fechaFinal
                 lugar

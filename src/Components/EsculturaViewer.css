@@ -9,7 +9,8 @@
     position: fixed;    
     width: 50px;
     margin: 10px;
-    transition:  0.25s ease;    
+    transition:  0.25s ease;  
+    z-index:10;  
 }
 
 .fixedToTop #buttonBack{
@@ -42,6 +43,7 @@
 }
 
 .EsculturaDescription h1{
+    color:#353535;
     text-align: center;
     font-family: sans-serif;
 }
@@ -55,7 +57,8 @@
 }
 
 #Medidas{
-    color:dimgray;    
+    color: #1d1d1d;    
+    font-weight: 500;
 }
 
 .disabled {
@@ -68,13 +71,16 @@
         width: 60%;       
     }              
 }
-   
 
-@media only screen and (max-width: 600px) {   
-    
+@media only screen and (max-width: 850px) {   
+
     .EsculturaContainer{
         width: 90%;
     }
+}
+
+@media only screen and (max-width: 600px) {   
+      
     .EsculturaInfo
     {               
         flex-direction: column;
