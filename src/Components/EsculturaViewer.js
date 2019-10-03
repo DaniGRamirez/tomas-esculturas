@@ -55,8 +55,11 @@ class EsculturaViewer extends Component {
     }
 
     formatHtmlText(textHtml){
-      var html_form =  textHtml.replace('"','');        
-      return  <div className="TextoDescripcion">{ReactHtmlParser(html_form)}</div> ;      
+      if(textHtml != null){
+        var html_form =  textHtml.replace('"','');        
+        return  <div className="TextoDescripcion">{ReactHtmlParser(html_form)}</div> ;      
+      }
+      else return "";
     }
 
     formatPhotosStructure(fotosEscultura){
