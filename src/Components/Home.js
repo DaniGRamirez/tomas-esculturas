@@ -16,8 +16,10 @@ class Home extends Component {
         return (
             <div>                   
                 <div className="HomeContainer">  
-                <video autoplay="true" muted loop id="myVideo">
-                    <source src="https://storage.coverr.co/videos/Clouds_Lapse?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6IjExNDMyN0NEOTRCMUFCMTFERTE3IiwiaWF0IjoxNTY5OTI1MTYzfQ.NtnnSD0nU9LpLqNk3TYhnmNibdyZvSCP61oTBqHhihU" type="video/mp4"/>
+                <video autoplay = "true" playsinline muted loop id="myVideo">
+                    <source 
+                    src="https://storage.coverr.co/videos/Clouds_Lapse?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6IjExNDMyN0NEOTRCMUFCMTFERTE3IiwiaWF0IjoxNTY5OTI1MTYzfQ.NtnnSD0nU9LpLqNk3TYhnmNibdyZvSCP61oTBqHhihU" 
+                    type="video/mp4"/>
                 </video>
                     {/* <img src = "https://media.graphcms.com/iG36ckBRYe2ZCWmkiPt0"></img> */}
                     <div className="contentHome">
