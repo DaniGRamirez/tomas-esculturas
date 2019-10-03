@@ -6,7 +6,7 @@ const nodemailer = require('nodemailer');
 var bodyParser = require('body-parser')
 
 
-console.log("test nodemon main");
+console.log("test nodemon main in serverTest");
 
 var smtpTransport = nodemailer.createTransport({
     service: 'gmail',
@@ -32,7 +32,7 @@ app.post('/api/contacto/',function(req,res,next){
       var mailOptions = {
         from: `${req.body.email}`, // sender address
         to: 'tomasgr.escultura@gmail.com', // list of receivers
-        subject: `Contacto web ${req.body.asunto}`, // Subject line       
+        subject: `Formulario web - ${req.body.asunto}`, // Subject line       
         html: ` mensaje enviado desde: ${req.body.email} <br> Mensaje del usuario: ${req.body.mensaje}`, // plain text body       
         replyTo:`${req.body.correo}`,
       };            

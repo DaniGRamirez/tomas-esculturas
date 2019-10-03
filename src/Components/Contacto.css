@@ -19,25 +19,112 @@
 .ContactElement{
     display: flex;
     flex-direction: row;
-    height: 75px;
-    margin-bottom: 15px;
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: space-between;
+    height: 50px;
+    margin-bottom: 15px;       
     width: 40%;
 }
 
 .ContactElement h1{
     font-size: 100%;
-    align-self: center;
-    margin-right: auto;     
+    align-self: center;    
+    white-space:nowrap;
+}    
+
+.formMailContainer{
+    background-color: #f4f4f4;
+    border-radius: 10px;    
+}
+
+.formMailContainer h1{     
+    color:  #333333 ;    
+    text-align: center;
+    font-weight: bold;
+}
+
+.formMailContainer input{
+
+    margin: 15px;    
+    font-size: medium;
+    background: none;
+
+    border:none;
+    background-image:none;
+    background-color:transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.formMailContainer .labelForm{
+    
+    margin: 15px 15px 5px 15px;
+    background-image:none;
+    background-color:transparent;
+    box-shadow: none;      
+    color: #333333;
+}
+
+.formMailContainer textarea{
+
+    font-size: medium;
+    margin: 15px 15px 5px 15px;    
+
+    border:none;
+    background-image:none;
+    background-color:transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+
+    margin: 15px 15px 5px 15px;    
+}
+
+.inputContainer{
+    border-radius: 10px;
+    background-color: white;
+    margin: 5%;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;   
+}
+
+.buttonMailContainer{
+    text-align: center;
+    margin-bottom: 70px;
+    border: none;
+}
+
+#buttonEmail{
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: larger;
+    background-color: #3d3d3e;
+    border-radius: 20px;
+    color: white;
+    height: 50px;
+    font-weight: bold;   
+    transition: all 0.4s ease;
+}
+
+#buttonEmail:hover{  
+    background-color:green;    
+    font-weight: bold;   
+    cursor: pointer;
+}
+
+#buttonEmail:focus{  
+   border: none;
+   outline: none; 
 }
 
 @media only screen and (max-width: 1000px)
 {
     .ContactContainer {
         width: 95%;
-    }
+    }   
 }
 
 @media only screen and (max-width: 800px) {   
@@ -46,21 +133,22 @@
         width: 95%;       
     }
 
-    .ContactElement{      
-        margin-left: 5%;
-        margin-right: 5%;
+    .ContactElement{             
         width: 80%;
     }
 
     .ContactElement h1{
-        font-size: 75%;
-        align-self: center;
-        margin-right: auto;       
+        font-size: 75%;            
     }
 
-    .ContactElement img{
-        margin-left: auto;   
+    .ContactElement img{       
         size: 50%; 
+    }    
+}
+
+@media only screen and (max-width: 600px) {      
+    #buttonEmail{
+        width: 60%;
     }
 }
 
@@ -70,9 +158,7 @@
         margin-top: 30px;
     }
 
-    .ContactElement{
-        margin-left: 5%;
-        margin-right: 5%;
+    .ContactElement{       
         width: 95%;
         height: inherit;
     }
@@ -87,6 +173,10 @@
     .ContactElement h1{      
         margin-right: auto;       
         margin-left: 10px;
+    }
+
+    #buttonEmail{
+        width: 70%;
     }
 }
 

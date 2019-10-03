@@ -6,10 +6,10 @@ import axios from 'axios';
 class Contacto extends Component {              
 
 componentDidMount(){
-    var testMail = document.getElementById("testEmail");
-    if(testMail != null)
+    var buttonSendMail = document.getElementById("buttonEmail");
+    if(buttonSendMail != null)
     {
-        document.getElementById("testEmail").addEventListener("click",function(){
+            buttonSendMail.addEventListener("click",function(){
 
             let nombre = document.getElementById("nombre").value;
             let email = document.getElementById("correo").value;
@@ -27,9 +27,13 @@ componentDidMount(){
 
                   axios.post('/api/contacto',datos).
                     then(function(response){
-                        alert("Email mandado");
+                        if(response == "ok")
+                            alert("Email mandado");
+                        else
+                            alert("Error al mandar mail");
                     }).catch(function(error){
                         console.log(error);
+                        alert('No se ha podido enviar el email. Disculpe las molestias');
                     });
             }
             else{
@@ -45,6 +49,29 @@ componentDidMount(){
     render(){
         return (                   
             <div className="ContactContainer">       
+                <div className="formMailContainer">
+                    <h1> Contacta con Tomás </h1>
+                    <div className="inputContainer">
+                        <label className="labelForm">Mail* </label>
+                        <input type="email" id="correo" placeholder="name@example.com" required></input>
+                    </div>
+                    <div className="inputContainer">
+                        <label className="labelForm">Nombre* </label>
+                        <input type="text" id="nombre" placeholder="nombre" required></input>
+                    </div>
+                    <div className="inputContainer">
+                        <label className="labelForm" >Asunto? </label>
+                        <input type="text" id="asunto" placeholder="asunto"></input>
+                    </div>
+                    <div className="inputContainer">
+                        <label className="labelForm" >Mensaje* </label>
+                        <textarea type="email" id="mensaje" rows="6"></textarea>
+                    </div>
+                    <div className="buttonMailContainer">                    
+                        <button id="buttonEmail">
+                            Enviar mail
+                        </button>  
+                    </div>
                 <div className = "ContactElement">
                     <img src="https://image.flaticon.com/icons/svg/18/18609.svg"></img>
                     <h1>tomasgr.escultura@gmail.com</h1>            
@@ -52,18 +79,8 @@ componentDidMount(){
                 <div className = "ContactElement">
                     <img src=" https://image.flaticon.com/icons/svg/0/191.svg"></img>   
                     <h1>+34-609278080</h1>                                 
-                </div>   
-                <label >Mail* </label>
-                <input type="email" id="correo" placeholder="name@example.com" required></input>
-                <label >Nombre* </label>
-                <input type="text" id="nombre" placeholder="nombre" required></input>
-                <label >Asunto? </label>
-                <input type="text" id="asunto" placeholder="asunto"></input>
-                <label >Mensaje* </label>
-                <textarea type="email" id="mensaje" rows="4"></textarea>
-                <button id="testEmail">
-                    Enviar mail
-                </button>  
+                </div>                   
+                </div>
         </div> 
     )}
 

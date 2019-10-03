@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './Header.css';
-import logo from '../img/logoredandwhite.png';
-import logoInstagram from '../img/LogoInstaInvertido.png';
+
 
 import{ 
     Link

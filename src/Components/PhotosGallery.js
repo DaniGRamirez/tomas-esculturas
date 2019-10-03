@@ -2,7 +2,6 @@ import React, {Component,url} from 'react';
 import Gallery from "react-photo-gallery";
 import Lightbox from 'react-images';
 import './PhotosGallery.css';
-import logoInstagram from '../img/LogoInstaBN.png';
 
 class GalleryTest extends Component {
 

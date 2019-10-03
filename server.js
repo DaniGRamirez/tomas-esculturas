@@ -27,18 +27,20 @@ app.get('/ping', function (req, res) {
 });
 
 app.post('/api/contacto/',function(req,res,next){
-  console.log("Function api in server");
+  console.log("Prueba nodemon");
+  console.log(req.body);
       var mailOptions = {
-        from: '"Dani 👻" <danigramirez27@gmail.com>', // sender address
+        from: `${req.body.email}`, // sender address
         to: 'tomasgr.escultura@gmail.com', // list of receivers
-        subject: `Prueba email dani ✔ ${req.datos}`, // Subject line
-        text: 'Hello world?', // plain text body
-        html: '<b>Hello world?</b>' // html body
+        subject: `Formulario web - ${req.body.asunto}`, // Subject line       
+        html: ` mensaje enviado desde: ${req.body.email} <br> Mensaje del usuario: ${req.body.mensaje}`, // plain text body       
+        replyTo:`${req.body.correo}`,
       };            
 
       smtpTransport.sendMail(mailOptions, function(error){
         if (error) {
           console.log(error);
+          res.send("error");
         } else {
           console.log('Email sent');
           res.send("ok");

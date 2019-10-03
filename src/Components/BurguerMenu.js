@@ -4,7 +4,8 @@ import './BurguerMenu.css';
 import{ 
   Link
 } from "react-router-dom"
-import logoInstagram from '../img/LogoInstaInvertido.png';
+
+const logoInstagram = "https://image.flaticon.com/icons/svg/733/733614.svg";
 
 class BurguerMenu extends Component {
   constructor (props) {
