@@ -16,7 +16,7 @@ class Home extends Component {
         return (
             <div>                   
                 <div className="HomeContainer">  
-                <video autoplay playsinline muted loop id="myVideo">
+                <video autoplay="true" playsinline="true" muted="true" loop id="myVideo">
                     <source 
                     src="https://storage.coverr.co/videos/Clouds_Lapse?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6IjExNDMyN0NEOTRCMUFCMTFERTE3IiwiaWF0IjoxNTY5OTI1MTYzfQ.NtnnSD0nU9LpLqNk3TYhnmNibdyZvSCP61oTBqHhihU" 
                     type="video/mp4"/>

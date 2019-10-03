@@ -22,11 +22,17 @@
     height: 50px;
     margin-bottom: 15px;       
     width: 40%;
+    background-color: greenyellow;
 }
 
 .ContactElement h1{
     font-size: 100%;
     align-self: center;      
+    background-color: red;
+}    
+
+.ContactElement img{    
+    background-color: purple;
 }    
 
 .formMailContainer{
