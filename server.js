@@ -44,7 +44,7 @@ app.get('/ping', function (req, res) {
 app.post('/api/contacto/',function(req,res,next){
   console.log("Prueba nodemon");  
       var mailOptions = {
-        from: `${req.body.email}`, // sender address
+        from: `${req.body.nombre}`, // sender address
         to: 'tomasgr.escultura@gmail.com', // list of receivers
         subject: `Formulario web - ${req.body.asunto}`, // Subject line       
         html: ` mensaje enviado desde: ${req.body.email} <br> Mensaje del usuario: ${req.body.mensaje}`, // plain text body       
