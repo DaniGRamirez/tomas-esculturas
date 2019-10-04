@@ -21,7 +21,7 @@ console.log("test nodemon main in serverTest");
 // });
 
 
-let transporterToken = nodemailer.createTransport({
+let transporterToken = nodemailer.createTransport({  
   host: 'smtp.gmail.com',
   port: 465,
   secure: true,
@@ -36,25 +36,28 @@ let transporterToken = nodemailer.createTransport({
   }
 });   
 
-var auth = {
-  type: 'OAuth2',
-  user: 'tomasgr.escultura@gmail.com',
-  clientId: '825503344034-ejv83of9mmmihot31f1b1r4b1r4gtnmb.apps.googleusercontent.com',
-  clientSecret: 'zkGWBMYJ4xUCE_RQoDTEeVW4',
-  refreshToken: '1/pmCce2ZVb9kFZ-SbrQ88X0bFewqQnrAFb9FpeBV8lJg'
-};
-
-let transporter = nodemailer.createTransport({
+let transporterTokenTomas = nodemailer.createTransport({
   host: 'smtp.gmail.com',
   port: 465,
   secure: true,
-  auth: auth
-  // auth: {
-  //     type: 'OAuth2',
-  //     user: 'tomasgr.escultura@gmail.com',
-  //     accessToken: "ya29.Il-UB-ZWymLRpcwrIygI5w-SSVSjgLiKqspog4ruANhn_CF0oSwU9l91FuS2DZmJQBScwyOGePjkhCIStNYZT9ivzsXXrfGfhKallcKlOtbOPm5_onR5tKiDXkA7poXqng"
-  // }
-});
+  auth: {
+      type: 'OAuth2',
+      user: 'tomasgr.escultura@gmail.com',
+      clientId: '742499606564-qki7m8vdnbc4qucqgqslbuijj1r0qa8p.apps.googleusercontent.com',
+      clientSecret: 'MBSx38e63sb7N8bqGU-bD-q9',
+      refreshToken: '1/Lu1y1npb94hrR8EucLOXjxWYF4QZcAocrrgS_9HcEYuGzGB7gXgfhJU8EySl48i8',
+      // accessToken: 'ya29.Il-UB1thoateU9n-x4DFmJ0lD2JY4p1tR56zorcNlWhckkyXcyCvlwzkLGRjX-kr4eEk2HISyTpC2oMyt9B6cvB6M39yZaDZt3TTGfNVyNi6yPo73VzSK7RtrZYy-iFnlA',
+      // expires: 1484314697598
+  }
+});   
+
+// var auth = {
+//   type: 'OAuth2',
+//   user: 'tomasgr.escultura@gmail.com',
+//   clientId: '825503344034-ejv83of9mmmihot31f1b1r4b1r4gtnmb.apps.googleusercontent.com',
+//   clientSecret: 'zkGWBMYJ4xUCE_RQoDTEeVW4',
+//   refreshToken: '1/pmCce2ZVb9kFZ-SbrQ88X0bFewqQnrAFb9FpeBV8lJg'
+// };
 
 var smtpTransport = nodemailer.createTransport({
     service: 'gmail',
@@ -82,14 +85,14 @@ app.post('/api/contacto/',function(req,res,next){
   console.log("Prueba nodemon");
   console.log(req.body);
       var mailOptions = {
-        from: `${req.body.email}`, // sender address
+        from: ` ${req.body.nombre} - ${req.body.email} `, // sender address
         to: 'tomasgr.escultura@gmail.com', // list of receivers
         subject: `Formulario web - ${req.body.asunto}`, // Subject line       
         html: ` mensaje enviado desde: ${req.body.email} <br> Mensaje del usuario: ${req.body.mensaje}`, // plain text body       
         replyTo:`${req.body.correo}`,
       };            
 
-      transporter.sendMail(mailOptions,function(error){
+      transporterToken.sendMail(mailOptions,function(error){
         console.log("Email acces-token");
           if (error) {
             console.log(error);
@@ -98,17 +101,7 @@ app.post('/api/contacto/',function(req,res,next){
             res.send("ok");
           }       
         }  
-      )
-
-      // smtpTransport.sendMail(mailOptions, function(error){
-      //   if (error) {
-      //     console.log(error);
-      //   } else {
-      //     console.log('Email sent');
-      //     res.send("ok");
-      //   }       
-      // });   
-      //   console.log("Llamada a server correcta");
+      )   
 });
 
 app.get('/*', function (req, res) {

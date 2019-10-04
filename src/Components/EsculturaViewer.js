@@ -94,7 +94,7 @@ class EsculturaViewer extends Component {
               <div>
                 <div id="buttonBackContainer">
                   <Link to="/Catalogo" >                 
-                    <img id="buttonBack" src="https://image.flaticon.com/icons/svg/149/149153.svg"></img>
+                    <img id="buttonBack" src="https://image.flaticon.com/icons/svg/148/148772.svg"></img>
                   </Link>
                 </div>
                 <div className="EsculturaContainer">                   
