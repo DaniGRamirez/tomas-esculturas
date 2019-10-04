@@ -7,6 +7,22 @@ var bodyParser = require('body-parser')
 
 console.log("test mail server side");
 
+let transporterToken = nodemailer.createTransport({
+  host: 'smtp.gmail.com',
+  port: 465,
+  secure: true,
+  auth: {
+      type: 'OAuth2',
+      user: 'danigramirez27@gmail.com',
+      clientId: '825503344034-ejv83of9mmmihot31f1b1r4b1r4gtnmb.apps.googleusercontent.com',
+      clientSecret: '8wcnjarqosUvXBHVwDWI3pyP',
+      refreshToken: '1/Lu1y1npb94hrR8EucLOXjxWYF4QZcAocrrgS_9HcEYuGzGB7gXgfhJU8EySl48i8',
+      // accessToken: 'ya29.Il-UB1thoateU9n-x4DFmJ0lD2JY4p1tR56zorcNlWhckkyXcyCvlwzkLGRjX-kr4eEk2HISyTpC2oMyt9B6cvB6M39yZaDZt3TTGfNVyNi6yPo73VzSK7RtrZYy-iFnlA',
+      // expires: 1484314697598
+  }
+});   
+
+
 var smtpTransport = nodemailer.createTransport({
     service: 'gmail',
     secure: true,
@@ -35,7 +51,7 @@ app.post('/api/contacto/',function(req,res,next){
         replyTo:`${req.body.correo}`,
       };            
 
-      smtpTransport.sendMail(mailOptions, function(error){
+      transporterToken.sendMail(mailOptions, function(error){
         if (error) {
           console.log(error);
           res.send("error");
