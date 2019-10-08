@@ -33,7 +33,10 @@ class EsculturaViewer extends Component {
       window.onscroll = null;
     }
     
-    onScroll(){         
+    onScroll(){       
+      if(document.getElementById("buttonBackContainer") == null)
+        return;  
+        
       var offsetScroll = document.getElementById("myHeader").offsetHeight;
       if(window.pageYOffset > offsetScroll){
         document.getElementById("buttonBackContainer").classList.add("fixedToTop");
