@@ -1,9 +1,14 @@
+
+.BioPageContainer{
+    width: 95%;
+    margin: 25px auto auto auto;
+}
+
 .BioContainer{
     display: flex;
     flex-direction: row;
-    width: 95%;
-    margin: 25px auto auto auto;
-    justify-content: space-around;
+  
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -38,17 +43,32 @@
     padding: 5px 10px;
 }
 
-.BioTextContainer p{
+.BioTextContainer p,li{
 
-    letter-spacing: 0.2rem;
+    letter-spacing: 0.15rem;
     text-align: left;
-    margin-left: 10%;
-   
+    margin-left: 10%;   
 }
+
+.BioTextContainer li{
+    padding-bottom: 5px;   
+    padding-top: 5px; 
+    margin-left: 5%;
+}
+
 .BioTextContainer h1{
 
     font-variant: petite-caps;
-    font-weight: 400;    
+    font-weight: bold;    
+}
+
+.CurriculumContainer{
+    margin-top: 50px; 
+    margin-bottom: 50px;
+}
+
+.CurriculumTextContainer{
+    text-align: inherit;    
 }
 
 @media only screen and (max-width: 900px) {   
@@ -82,10 +102,11 @@
 
 @media only screen and (max-width: 650px) {   
     
-    .BioTextContainer p{        
+    .BioTextContainer p,li{        
         margin-left: 5%;
         margin-right: 5%;
     }
+    
 }
 
 @media only screen and (max-width: 400px) {   
@@ -106,6 +127,12 @@
         text-align: center;
         margin-left: 2%;
         margin-right: 2%;
-        font-size: 0.8em;
+        font-size: 0.9em;
+    }
+
+    .BioTextContainer li{      
+        margin-left: 2%;
+        margin-right: 2%;
+        font-size: 0.9em;
     }
 }

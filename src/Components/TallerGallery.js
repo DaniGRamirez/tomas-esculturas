@@ -31,7 +31,7 @@ class TallerGallery extends Component {
         // console.log(this.props.history);
         // console.log(this.props.data);
         let { loading, error,galeriaTallers} = this.props.data;
-        console.log(galeriaTallers);
+        // console.log(galeriaTallers);
         if (error){
             console.log(error);
             return <h1>Error</h1>

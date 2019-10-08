@@ -42,7 +42,14 @@
 .ExposicionImgContainer{
     flex-basis: 40%;
     margin: auto;
+    margin-right: 0; 
 }
+
+.Exposicion:nth-child(odd)
+.ExposicionImgContainer { 
+    margin: auto;
+    margin-left: 0;   
+} 
 
 #fotoPrincipal{    
     width: 100%;
