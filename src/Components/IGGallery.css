@@ -1,0 +1,10 @@
+.IGGalleryContainer{
+    width: 80%;
+    margin: 75px auto;
+}
+
+#IGImagesContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;    
+}

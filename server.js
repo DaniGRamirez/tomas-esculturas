@@ -5,7 +5,23 @@ const app = express();
 const nodemailer = require('nodemailer');
 var bodyParser = require('body-parser')
 
-console.log("test mail server side");
+const Instagram = require('node-instagram').default;
+
+const proxy = require('http-proxy-middleware');
+
+
+const access_token = "21382749833.65f2e96.da1d22e9866a49f58974e69d197d6175";
+const accestTokenMadBros ='11409178044.79295f1.84d6c6bac38f40dba09faa34c53a236b';
+const instagram = new Instagram({
+  //Tomas
+  // clientId: '65f2e963357f466083d09c38af40f935',
+  // clientSecret: '434bd32cfe8c4867acf9e6d30d9198f7',
+  // accessToken: '21382749833.65f2e96.da1d22e9866a49f58974e69d197d6175',
+  //MadBros
+  clientId: '79295f161e5a471784b00c5850018798',
+  clientSecret: '858bceb8678e454894362301b9ae56ce',
+  accessToken: accestTokenMadBros,
+});
 
 let transporterToken = nodemailer.createTransport({
   host: 'smtp.gmail.com',
@@ -23,6 +39,7 @@ let transporterToken = nodemailer.createTransport({
 });   
 
 
+
 var smtpTransport = nodemailer.createTransport({
     service: 'gmail',
     secure: true,
@@ -36,9 +53,21 @@ app.use(express.static(__dirname));
 app.use(express.static(path.join(__dirname, 'build')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
-
 app.get('/ping', function (req, res) {
  return res.send('pong');
+});
+
+app.get('/api',async function(req,res){
+  console.log("Calling api with proxy");
+  res.send(200);
+});
+
+app.get('/api/media/user',async function(req,res){
+  console.log("Calling api in server");
+  await instagram.get('users/self/media/recent').then(data => {
+    console.log(data);
+    res.json(data);
+  });  
 });
 
 app.post('/api/contacto/',function(req,res,next){
@@ -67,6 +96,6 @@ app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-app.listen(port);
+app.listen(port,()=> console.log(`App listening port ${port}`));
 //app.listen(port_post);
 

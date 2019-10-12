@@ -7,8 +7,20 @@ var bodyParser = require('body-parser')
 const { google } = require("googleapis");
 const OAuth2 = google.auth.OAuth2;
 
+const Instagram = require('node-instagram').default;
 
-console.log("test nodemon main in serverTest");
+const access_token = "21382749833.65f2e96.da1d22e9866a49f58974e69d197d6175";
+const accestTokenMadBros ='11409178044.79295f1.84d6c6bac38f40dba09faa34c53a236b';
+const instagram = new Instagram({
+  //Tomas
+  // clientId: '65f2e963357f466083d09c38af40f935',
+  // clientSecret: '434bd32cfe8c4867acf9e6d30d9198f7',
+  // accessToken: '21382749833.65f2e96.da1d22e9866a49f58974e69d197d6175',
+  //MadBros
+  clientId: '79295f161e5a471784b00c5850018798',
+  clientSecret: '858bceb8678e454894362301b9ae56ce',
+  accessToken: accestTokenMadBros,
+});
 
 // const oauth2Client = new OAuth2(
 //   '825503344034-ejv83of9mmmihot31f1b1r4b1r4gtnmb.apps.googleusercontent.com', // ClientID
@@ -19,6 +31,7 @@ console.log("test nodemon main in serverTest");
 // oauth2Client.setCredentials({
 //   refresh_token: "1/2iO6SNY9sdFoYMJ34kE17HakNGg170T-sR_iAhPLe0A"
 // });
+
 
 
 let transporterToken = nodemailer.createTransport({  
@@ -81,6 +94,14 @@ app.get('/tokenGmail',function(req,res){
   console.log("token Gmail")
 });
 
+app.get('/media/user',async function(req,res){
+  await instagram.get('users/self/media/recent').then(data => {
+    console.log(data);
+    res.json(data);
+  });  
+});
+
+
 app.post('/api/contacto/',function(req,res,next){
   console.log("Prueba nodemon");
   console.log(req.body);
@@ -108,6 +129,6 @@ app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-app.listen(3001);
+app.listen(3001,()=> console.log(`App listening port 3001`));
 //app.listen(port_post);
 
