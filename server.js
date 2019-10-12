@@ -7,9 +7,6 @@ var bodyParser = require('body-parser')
 
 const Instagram = require('node-instagram').default;
 
-const proxy = require('http-proxy-middleware');
-
-
 const access_token = "21382749833.65f2e96.da1d22e9866a49f58974e69d197d6175";
 const accestTokenMadBros ='11409178044.79295f1.84d6c6bac38f40dba09faa34c53a236b';
 const instagram = new Instagram({

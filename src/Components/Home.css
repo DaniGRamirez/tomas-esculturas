@@ -14,6 +14,7 @@
 
 .HomeContainer .contentHome p,h1{
    margin-left: 10px;
+   font-variant: petite-caps;
 }
 
 .HomeContainer img{
@@ -28,8 +29,7 @@
 @media only screen and (max-width: 800px) {   
     .HomeContainer .contentHome{
         height: 70px;
-        font-size: smaller;
-        padding: 5px;
+        font-size: smaller;       
     }
 
     .contentHome h1{                    
@@ -42,8 +42,7 @@
 
 @media only screen and (max-width: 550px) {   
     .HomeContainer .contentHome{
-        height: 50px;      
-        padding: 5px;
+        height: 50px;            
     }
 
     .contentHome h1{                    
