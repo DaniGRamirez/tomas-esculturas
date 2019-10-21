@@ -14,16 +14,16 @@ class Exposiciones extends Component {
 
     renderExposiciones(_exposicion_render)
     {
-        // console.log(_exposicion_render);
+        console.log(_exposicion_render);
         let formatedPhotos = [];
         var i;
-        for (i = 0; i < _exposicion_render.fotoEsculturas.length; i++) {             
+        for (i = 0; i < _exposicion_render.fotosExposicion.length; i++) {             
             
             formatedPhotos.push(
                 {
-                    src: _exposicion_render.fotoEsculturas[i].foto.url,
-                    width:_exposicion_render.fotoEsculturas[i].foto.width,
-                    height:_exposicion_render.fotoEsculturas[i].foto.height
+                    src: _exposicion_render.fotosExposicion[i].url,
+                    width:_exposicion_render.fotosExposicion[i].width,
+                    height:_exposicion_render.fotosExposicion[i].height
                 }
             )
         }
@@ -108,13 +108,11 @@ export const contentExposiciones = gql`
                 }
                 descripcion
                 web
-                fotoEsculturas{
-                    foto{
-                        url    
-                        width
-                        height                    
-                    }
-                   
+                fotosExposicion{
+                    id
+                    height
+                    width
+                    url
                 }                
         }
     }

@@ -72,9 +72,9 @@ class EsculturaViewer extends Component {
             
             formatedPhotos.push(
                 {
-                    src: fotosEscultura[i].foto.url,
-                    width:fotosEscultura[i].widthRatio,
-                    height:fotosEscultura[i].heightRatio
+                    src: fotosEscultura[i].url,
+                    width:fotosEscultura[i].width,
+                    height:fotosEscultura[i].height
                 }
             )
         }
@@ -90,9 +90,10 @@ class EsculturaViewer extends Component {
         
         if(!loading){                        
            
+          console.log(esculturas);
             var idEscultura = this.props.location.pathname.replace("/Escultura/",'');            
             this.selectEscultura(esculturas,idEscultura);
-            this.formatPhotosStructure(selected.fotosEscultura);                        
+            this.formatPhotosStructure(selected.fotos);                        
             return (      
               <div>
                 <div id="buttonBackContainer">
@@ -105,7 +106,7 @@ class EsculturaViewer extends Component {
                       <Escultura  disabled = {true} esculturaData ={selected} history={this.props.history}></Escultura>
                       <div className ="EsculturaDescription">
                         <h1>{selected.nombre}</h1>                                   
-                        {this.formatHtmlText(selected.richDescripcion.html)}                                                                                 
+                        {this.formatHtmlText(selected.descripcion.html)}                                                                                 
                         <p className="TextoDescripcion" id="Medidas">                        
                             {selected.medidas}
                         </p>  
@@ -130,25 +131,19 @@ export const escultura = gql`
   query escultura {
     esculturas{
       nombre      
-      descripcion      
-      richDescripcion{
+      descripcion   
+      {
         text
         html
+      }        
+      medidas       
+      fotos{
+        id
+        height
+        width
+        url
       }
-      medidas
-      materialesEscultura{
-        material    
-        id    
-      }      
-      fotosEscultura{
-          nombre
-          foto
-          {
-            url
-          }
-          widthRatio
-          heightRatio
-      }
+      materiales
     }
   }
 `

@@ -25,7 +25,7 @@ class Home extends Component {
                 <div className="HomeContainer">  
                 <video autoPlay playsInline muted loop id="myVideo">
                     <source 
-                    src="https://storage.coverr.co/videos/Clouds_Lapse?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6IjExNDMyN0NEOTRCMUFCMTFERTE3IiwiaWF0IjoxNTY5OTI1MTYzfQ.NtnnSD0nU9LpLqNk3TYhnmNibdyZvSCP61oTBqHhihU" 
+                    src="https://media.graphcms.com/NRSu42t5Rm6ZLwXToEvC" 
                     type="video/mp4"/>
                 </video>
                     {/* <img src = "https://media.graphcms.com/iG36ckBRYe2ZCWmkiPt0"></img> */}

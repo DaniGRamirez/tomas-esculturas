@@ -20,7 +20,7 @@ class Catalogo extends Component
         }
 
         if(!loading){                    
-            // console.log(this.props.data.esculturas);
+            console.log(this.props.data.esculturas);
             return (                   
               <div>                                      
                   <div className ="catalogoContainer" > 
@@ -44,18 +44,14 @@ export const esculturas = gql`
   query esculturas { 
     esculturas{
       nombre      
-      id
-      materialesEscultura{
-        material   
-        id     
-      }      
-      fotosEscultura{
-          nombre
-          foto
-          {
-            url
-          }
+      id   
+      fotos{
+        id
+        height
+        width
+        url
       }
+      materiales
     }
   }
 `

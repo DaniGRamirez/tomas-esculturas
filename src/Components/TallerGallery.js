@@ -15,13 +15,13 @@ class TallerGallery extends Component {
     formatPhotosStructure(fotosTaller){        
         formatedPhotos = [];
         var i;
-        for (i = 0; i < fotosTaller.fotosTaller.length; i++) {             
+        for (i = 0; i < fotosTaller.fotosGaleriaTaller.length; i++) {             
             let scaleFactor = Math.random() +1;
             formatedPhotos.push(
                 {
-                    src: fotosTaller.fotosTaller[i].foto.url,
-                    width:fotosTaller.fotosTaller[i].widthRatio * scaleFactor,
-                    height:fotosTaller.fotosTaller[i].heightRatio * scaleFactor
+                    src: fotosTaller.fotosGaleriaTaller[i].url,
+                    width:fotosTaller.fotosGaleriaTaller[i].width * scaleFactor,
+                    height:fotosTaller.fotosGaleriaTaller[i].height * scaleFactor
                 }
             )
         }
@@ -57,13 +57,11 @@ export const fotosTaller = gql`
   query fotosTaller {
     galeriaTallers{
       nombre            
-      fotosTaller{          
-          foto
-          {
-            url
-          }
-          widthRatio
-          heightRatio       
+      fotosGaleriaTaller{          
+        id
+        height
+        width
+        url   
       }
     }
   }

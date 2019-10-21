@@ -18,17 +18,17 @@ class Escultura extends Component {
     }
 
     render(){
-        // console.log(this.props.esculturaData);
+        //  console.log(this.props.esculturaData);
         return(
             <div className ="esculturaContainer" onClick = {this.handleClick}>               
                 <div className="imgContainer">
-                    <img src = {this.props.esculturaData.fotosEscultura[0].foto.url}/>
+                    <img src = {this.props.esculturaData.fotos[0].url}/>
                 </div>
                 <h1 id="nombre">{this.props.esculturaData.nombre} </h1>
                 <div className="materialesContainer">
-                    {this.props.esculturaData.materialesEscultura.map(material =>(                                          
+                    {this.props.esculturaData.materiales.map(material =>(                                          
                         // console.log(material)
-                        <h1 key={material.id} className="material">{material.material}</h1>
+                        <h1 key={material} className="material">{material}</h1>
                         ))
                     }
                 </div>              

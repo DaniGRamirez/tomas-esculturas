@@ -33,11 +33,11 @@
     display: flex;  
     align-items: baseline;
     align-content: center;   
-    background: url(https://media.graphcms.com/n3nsx0iQQ6OmN4Yc6AOS);
+    /* background: url(https://media.graphcms.com/n3nsx0iQQ6OmN4Yc6AOS);
     background-repeat: no-repeat;
     background-color: rgba(228, 228, 228, 0.40);
     background-size: cover;    
-    background-position: left;
+    background-position: left; */
 }
 
 .centerItems {
@@ -211,9 +211,9 @@
 @media only screen and (max-width: 500px) {   
 
     .header{        
-        background: url();
+        /* background: url();
         background-color: initial;   
-        background-color: rgba(228, 228, 228, 0.40);
+        background-color: rgba(228, 228, 228, 0.40); */
     }
 }
 
