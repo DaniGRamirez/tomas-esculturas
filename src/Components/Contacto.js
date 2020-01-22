@@ -71,10 +71,10 @@ componentDidMount(){
                     <img src="https://image.flaticon.com/icons/svg/18/18609.svg"></img>
                     <h1>tomasgr.escultura@gmail.com</h1>            
                 </div>                            
-                <div className = "ContactElement">
+                {/* <div className = "ContactElement">
                     <img src=" https://image.flaticon.com/icons/svg/0/191.svg"></img>   
                     <h1>+34-609278080</h1>                                 
-                </div>                   
+                </div>                    */}
                 </div>
         </div> 
     )}

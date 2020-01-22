@@ -10,14 +10,14 @@ const Instagram = require('node-instagram').default;
 const access_token = "21382749833.65f2e96.da1d22e9866a49f58974e69d197d6175";
 const accestTokenMadBros ='11409178044.79295f1.84d6c6bac38f40dba09faa34c53a236b';
 const instagram = new Instagram({
-  //Tomas
-  // clientId: '65f2e963357f466083d09c38af40f935',
-  // clientSecret: '434bd32cfe8c4867acf9e6d30d9198f7',
-  // accessToken: '21382749833.65f2e96.da1d22e9866a49f58974e69d197d6175',
-  //MadBros
-  clientId: '79295f161e5a471784b00c5850018798',
-  clientSecret: '858bceb8678e454894362301b9ae56ce',
-  accessToken: accestTokenMadBros,
+  // Tomas
+  clientId: '65f2e963357f466083d09c38af40f935',
+  clientSecret: '434bd32cfe8c4867acf9e6d30d9198f7',
+  accessToken: '21382749833.65f2e96.da1d22e9866a49f58974e69d197d6175',
+  // //MadBros
+  // clientId: '79295f161e5a471784b00c5850018798',
+  // clientSecret: '858bceb8678e454894362301b9ae56ce',
+  // accessToken: accestTokenMadBros,
 });
 
 let transporterToken = nodemailer.createTransport({
