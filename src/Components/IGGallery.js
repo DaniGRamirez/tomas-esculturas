@@ -20,7 +20,7 @@ class IGGallery extends Component {
         axios.get('/api/media/user').
         then((response)=>{     
             console.log(response.data.data);                                                                  
-            this.setState({dataIG: response.data.data.filter(item => item.type === "image").slice(0,6)})
+            this.setState({dataIG: response.data.data.filter(item => item.type === "image" || item.type === "carousel" ).slice(0,6)})
         }).catch((error)=>{
             console.log(error);            
         });
