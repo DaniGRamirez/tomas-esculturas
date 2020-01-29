@@ -20,22 +20,15 @@ import{
   Route,  
 } from "react-router-dom"
 
-const trackingId = "UA-157055442-2"; // Replace with your Google Analytics tracking ID
-ReactGA.initialize(trackingId);
+import GA from './GoogleAnalytics'
+
+// const trackingId = "UA-157055442-2"; // Replace with your Google Analytics tracking ID
+// ReactGA.initialize(trackingId);
 // ReactGA.set({
 //   userId: auth.currentUserId(),
 //   // any data that is relevant to the user session
 //   // that you would like to track with google analytics
 // })
-
-const history = createBrowserHistory();
-
-// Initialize google analytics page view tracking
-history.listen(location => {
-  ReactGA.set({ page: location.pathname }); // Update the user's current page
-  ReactGA.pageview(location.pathname); // Record a pageview for the given page
-});
-
 
 class App extends Component {
 
@@ -62,7 +55,7 @@ class App extends Component {
 
   render() {
 
-    ReactGA.event({
+    ReactGA.event({      
       category: "Test render App",
       action: "User enters app",
     });
@@ -73,7 +66,8 @@ class App extends Component {
     else
       navBurguerMenu = ""        
     return (     
-      <Router history={history}>
+      <Router>
+        { GA.init() && <GA.RouteTracker /> }
         <div className="AppContainer">
           <div className="ContentContainer">
             <Header isDesktop={this.state.isDesktop}/>     

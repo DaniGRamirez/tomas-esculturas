@@ -4,6 +4,7 @@ import gql from 'graphql-tag'
 import { graphql } from 'react-apollo'
 import './Exposiciones.css';
 import PhotoGallery from './PhotosGallery';
+import ReactGA from 'react-ga';
 
 function isEmpty(str) {
     return (!str || 0 === str.length);
@@ -61,6 +62,7 @@ class Exposiciones extends Component {
 
     render(){
 
+        // ReactGA.pageview("/Exposiciones");
         let { loading, error,exposicionesActivases } = this.props.data;
         
         if (error){

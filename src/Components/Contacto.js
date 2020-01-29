@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import './Contacto.css';
 import axios from 'axios';
+import ReactGA from 'react-ga';
 
 class Contacto extends Component {              
 
@@ -39,6 +40,8 @@ componentDidMount(){
     else{
         console.log("testMail button is null");
     }
+
+    // ReactGA.pageview("/Contacto");
 }
 
     render(){
